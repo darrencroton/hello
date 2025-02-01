@@ -9,23 +9,180 @@
         "averageHR": 154,
         "averagePower": 268,
         "totalDuration": "7:00:00",
-        "totalRuns": 5,
+        "totalRuns": 6,
         "totalElevation": 523
       },
       "runs": [
         {
-          "date": "2024-11-04",
-          "dayOfWeek": "Monday",
+          "date": "2024-11-06",
+          "dayOfWeek": "Wednesday",
           "type": "Easy Run",
-          "distance": 10.0,
-          "duration": "1:10:48",
-          "averagePace": "7:05",
+          "distance": 12.3,
+          "duration": "1:24:34",
+          "averagePace": "6:54",
+          "heartRate": 144,
+          "power": 272,
+          "temperature": 12,
+          "elevation": 89,
+          "vo2max": 47.2,
+          "trimp": 123
+        },
+        {
+          "date": "2024-11-08",
+          "dayOfWeek": "Friday",
+          "type": "Long Run",
+          "distance": 17.4,
+          "duration": "2:02:02",
+          "averagePace": "7:02",
+          "heartRate": 156,
+          "power": 262,
+          "temperature": 25,
+          "elevation": 145,
+          "vo2max": 46.2,
+          "trimp": 269
+        }
+      ]
+    },
+    {
+      "weekNumber": 46,
+      "startDate": "2024-11-11",
+      "stats": {
+        "totalDistance": 61.8,
+        "averagePace": "6:42",
+        "averageHR": 148,
+        "averagePower": 271,
+        "totalDuration": "7:30:00",
+        "totalRuns": 7,
+        "totalElevation": 877
+      },
+      "runs": [
+        {
+          "date": "2024-11-11",
+          "dayOfWeek": "Monday",
+          "type": "Progressive Run",
+          "distance": 10.1,
+          "duration": "1:11:15",
+          "averagePace": "7:04",
           "heartRate": 152,
-          "power": 269,
-          "temperature": 15,
-          "elevation": 124,
-          "vo2max": 48.2,
-          "trimp": 89
+          "power": 264,
+          "temperature": 18,
+          "elevation": 98,
+          "vo2max": 48.1,
+          "trimp": 121
+        },
+        {
+          "date": "2024-11-13",
+          "dayOfWeek": "Wednesday",
+          "type": "Tempo Intervals",
+          "distance": 11.1,
+          "duration": "1:19:02",
+          "averagePace": "7:07",
+          "heartRate": 161,
+          "power": 274,
+          "temperature": 14,
+          "elevation": 132,
+          "vo2max": 49.2,
+          "trimp": 162
+        },
+        {
+          "date": "2024-11-15",
+          "dayOfWeek": "Friday",
+          "type": "Progressive Run",
+          "distance": 11.1,
+          "duration": "1:13:07",
+          "averagePace": "6:35",
+          "heartRate": 142,
+          "power": 281,
+          "temperature": 16,
+          "elevation": 165,
+          "vo2max": 47.8,
+          "trimp": 165
+        }
+      ]
+    },
+    {
+      "weekNumber": 47,
+      "startDate": "2024-11-18",
+      "stats": {
+        "totalDistance": 48.7,
+        "averagePace": "6:27",
+        "averageHR": 142,
+        "averagePower": 269,
+        "totalDuration": "6:00:00",
+        "totalRuns": 5,
+        "totalElevation": 631
+      },
+      "runs": [
+        {
+          "date": "2024-11-19",
+          "dayOfWeek": "Tuesday",
+          "type": "Easy Run",
+          "distance": 7.0,
+          "duration": "40:23",
+          "averagePace": "5:54",
+          "heartRate": 147,
+          "power": 268,
+          "temperature": 27,
+          "elevation": 78,
+          "vo2max": 47.1,
+          "trimp": 79
+        },
+        {
+          "date": "2024-11-21",
+          "dayOfWeek": "Thursday",
+          "type": "Easy Run",
+          "distance": 8.2,
+          "duration": "56:53",
+          "averagePace": "6:53",
+          "heartRate": 146,
+          "power": 267,
+          "temperature": 17,
+          "elevation": 84,
+          "vo2max": 46.8,
+          "trimp": 84
+        },
+        {
+          "date": "2024-11-24",
+          "dayOfWeek": "Sunday",
+          "type": "Easy Run",
+          "distance": 12.3,
+          "duration": "1:27:36",
+          "averagePace": "7:11",
+          "heartRate": 145,
+          "power": 259,
+          "temperature": 18,
+          "elevation": 125,
+          "vo2max": 46.2,
+          "trimp": 125
+        }
+      ]
+    },
+    {
+      "weekNumber": 48,
+      "startDate": "2024-11-25",
+      "stats": {
+        "totalDistance": 51.8,
+        "averagePace": "6:06",
+        "averageHR": 146,
+        "averagePower": 271,
+        "totalDuration": "6:30:00",
+        "totalRuns": 5,
+        "totalElevation": 599
+      },
+      "runs": [
+        {
+          "date": "2024-11-26",
+          "dayOfWeek": "Tuesday",
+          "type": "Long Run",
+          "distance": 17.4,
+          "duration": "2:02:02",
+          "averagePace": "7:02",
+          "heartRate": 156,
+          "power": 262,
+          "temperature": 25,
+          "elevation": 239,
+          "vo2max": 47.8,
+          "trimp": 239
         }
       ]
     }
