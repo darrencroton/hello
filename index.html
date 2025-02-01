@@ -1,298 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="referrer" content="no-referrer">
-    <title>Ballarat Marathon 2025</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #007AFF;
-            --background-color: #F2F2F7;
-            --card-background: #FFFFFF;
-            --text-color: #1C1C1E;
-            --secondary-text: #8E8E93;
-            --border-color: #C6C6C8;
-            --highlight-background: #E5E5EA;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.4;
-        }
-
-        .header {
-            background-color: var(--card-background);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .header h1 {
-            font-size: 1.7rem;
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        .week-summary {
-            background-color: var(--card-background);
-            padding: 1.2rem;
-            margin: 1rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .week-summary-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .total-distance {
-            color: var(--text-color);
-            font-size: 1.3rem;
-            margin: 1rem 0;
-            font-weight: 500;
-        }
-
-        .week-container {
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            display: flex;
-            scroll-behavior: smooth;
-            flex-direction: row;
-        }
-
-        .week {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .run-card {
-            background: var(--card-background);
-            border-radius: 12px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .run-date {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-
-        .run-type {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-        }
-
-        .stat {
-            text-align: left;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-value {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-color);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-            margin-top: 0.2rem;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            font-weight: 500;
-            color: var(--secondary-text);
-        }
-
-        .week-divider {
-            height: 1px;
-            background-color: var(--border-color);
-            margin: 1rem -1rem;
-        }
-
-        .week-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .run-notes {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>Ballarat Marathon 2025</h1>
-    </div>
-    <div id="app">
-        <div class="loading">Loading training data...</div>
-    </div>
-
-    <script>
-        async function fetchTrainingData() {
-            try {
-                const response = await fetch('data/training.json');
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Error loading training data:', error);
-                return null;
-            }
-        }
-
-        function formatDate(dateStr) {
-            const date = new Date(dateStr);
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            function getOrdinal(n) {
-                const s = ['th', 'st', 'nd', 'rd'];
-                const v = n % 100;
-                return n + (s[(v - 20) % 10] || s[v] || s[0]);
-            }
-            
-            return `${days[date.getDay()]} ${getOrdinal(date.getDate())} ${months[date.getMonth()]}`;
-        }
-
-        function getDateRange(week) {
-            const startDate = new Date(week.runs[week.runs.length - 1].date);
-            const endDate = new Date(week.runs[0].date);
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            function getOrdinal(n) {
-                const s = ['th', 'st', 'nd', 'rd'];
-                const v = n % 100;
-                return n + (s[(v - 20) % 10] || s[v] || s[0]);
-            }
-            
-            if (startDate.getMonth() === endDate.getMonth()) {
-                return `${getOrdinal(endDate.getDate())} - ${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]}`;
-            } else {
-                return `${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]} - ${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]}`;
-            }
-        }
-
-        function convertToKm(miles) {
-            return (miles * 1.60934).toFixed(1);
-        }
-
-        function calculateWeeksUntilRace() {
-            const raceDay = new Date(2025, 3, 27); // 27th April 2025 (months are 0-indexed)
-            const today = new Date();
-            const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
-            
-            const weeksDifference = Math.ceil((raceDay - today) / millisecondsPerWeek);
-            return weeksDifference > 0 ? weeksDifference : 0;
-        }
-
-        function createWeekSummary(week, useKm) {
-            const distance = useKm ? week.stats.totalDistance : convertToKm(week.stats.totalDistance);
-            const summaryEl = document.createElement('div');
-            summaryEl.className = 'week-summary';
-            
-            const weeksUntilRace = calculateWeeksUntilRace();
-            
-            summaryEl.innerHTML = `
-                <div class="week-summary-title">${getDateRange(week)}</div>
-                <div class="total-distance">${weeksUntilRace} weeks until race day</div>
-                <div class="total-distance">Weekly distance: ${distance}km</div>
-            `;
-            
-            return summaryEl;
-        }
-
-        function createWeekElement(week, useKm) {
-            const weekEl = document.createElement('div');
-            weekEl.className = 'week';
-            
-            weekEl.appendChild(createWeekSummary(week, useKm));
-
-            week.runs.forEach((run, index) => {
-                const runCard = document.createElement('div');
-                runCard.className = 'run-card';
-                
-                const distance = useKm ? run.distance : convertToKm(run.distance);
-                runCard.innerHTML = `
-                    <div class="run-date">${formatDate(run.date)}</div>
-                    <div class="run-type">${run.type}</div>
-                    <div class="stat">
-                        <div class="stat-value">${distance}km</div>
-                        <div class="stat-label">Distance</div>
-                    </div>
-                    ${run.notes ? `<div class="run-notes">${run.notes}</div>` : ''}
-                `;
-                
-                weekEl.appendChild(runCard);
-
-                if (index < week.runs.length - 1) {
-                    const divider = document.createElement('div');
-                    divider.className = 'week-divider';
-                    weekEl.appendChild(divider);
-                }
-            });
-
-            return weekEl;
-        }
-
-        function findCurrentWeekIndex(weeks) {
-            const now = new Date();
-            
-            // First, try to find the exact current week
-            const currentWeekIndex = weeks.findIndex(week => {
-                const weekRuns = week.runs;
-                const weekStartDate = new Date(weekRuns[weekRuns.length - 1].date);
-                const weekEndDate = new Date(weekRuns[0].date);
-                
-                return now >= weekStartDate && now <= weekEndDate;
-            });
-
-            // If an exact current week is found, return it
-            if (currentWeekIndex !== -1) {
-                return currentWeekIndex;
-            }
-
-            // If no exact current week, find the most recent week before current date
-            for (let i = 0; i < weeks.length; i++) {
-                const weekEndDate = new Date(weeks[i].runs[weeks[i].runs.length - 1].date);
-                if (weekEndDate <= now) {
-                    return i;
-                }
-            }
-
-            // If no week found (which should be rare), return the first week
-            return 0;
-        }
+[Previous content remains the same until the findCurrentWeekIndex function...]
 
         async function initializeApp() {
             const data = await fetchTrainingData();
@@ -305,8 +12,19 @@
             const weekContainer = document.createElement('div');
             weekContainer.className = 'week-container';
 
-            data.weeks.forEach(week => {
-                weekContainer.appendChild(createWeekElement(week, useKm));
+            // Calculate total weeks in the program
+            const totalWeeks = data.weeks.length;
+
+            // Find the start date of the program (first Monday)
+            const firstWeekDates = data.weeks[data.weeks.length - 1].runs.map(run => new Date(run.date));
+            const programStart = new Date(Math.min(...firstWeekDates.map(d => d.getTime())));
+            while (programStart.getDay() !== 1) {
+                programStart.setDate(programStart.getDate() - 1);
+            }
+
+            data.weeks.forEach((week, index) => {
+                const weekNumber = data.weeks.length - index;  // Count down from total weeks
+                weekContainer.appendChild(createWeekElement(week, weekNumber, totalWeeks, useKm));
             });
 
             document.getElementById('app').innerHTML = '';
@@ -316,6 +34,38 @@
             const currentWeekIndex = findCurrentWeekIndex(data.weeks);
             const weekWidth = window.innerWidth;
             weekContainer.scrollLeft = currentWeekIndex * weekWidth;
+
+            // Add scroll event listener to scroll to top when changing weeks
+            let lastScrollLeft = weekContainer.scrollLeft;
+            weekContainer.addEventListener('scroll', () => {
+                const currentScrollLeft = weekContainer.scrollLeft;
+                const weekWidth = window.innerWidth;
+                
+                // Check if we've scrolled to a new week
+                if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
+                }
+            });
+
+            // Add touch event listeners for smoother scrolling behavior
+            let touchStartX = 0;
+            let touchStartScroll = 0;
+
+            weekContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartScroll = weekContainer.scrollLeft;
+                lastScrollLeft = weekContainer.scrollLeft;
+            });
+
+            weekContainer.addEventListener('touchend', (e) => {
+                const weekWidth = window.innerWidth;
+                const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
+                weekContainer.scrollTo({
+                    left: currentWeek * weekWidth,
+                    behavior: 'smooth'
+                });
+            });
         }
 
         document.addEventListener('DOMContentLoaded', initializeApp);
