@@ -2,6 +2,7 @@ window.fetchTrainingData = async function() {
     try {
         const response = await fetch('data/training.json');
         const data = await response.json();
+        window.trainingData = data; // Make data globally accessible
         return data;
     } catch (error) {
         console.error('Error loading training data:', error);
@@ -53,6 +54,10 @@ window.convertToKm = function(miles) {
 }
 
 window.calculateWeeksUntilRace = function() {
+    if (!window.trainingData) {
+        console.error('Training data not loaded');
+        return 0;
+    }
     const raceDay = new Date(window.trainingData.raceday);
     const today = new Date();
     const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
