@@ -1,26 +1,35 @@
-/* Week container */
-.week {
-    background: var(--card-background);
-    margin: 1rem;
+.week-summary {
+    background-color: var(--card-background);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
     border-radius: 12px;
-    overflow: hidden;
+    border: 1px solid var(--border-color);
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.week-header {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.week-title {
+.week-summary-title {
     font-size: 1.2rem;
     font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
 }
 
-.week-summary {
-    color: var(--secondary-text);
-    font-size: 0.9rem;
+.week-progress {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.countdown {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.total-distance {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 500;
 }
