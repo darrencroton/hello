@@ -53,19 +53,6 @@ window.convertToKm = function(miles) {
     return (miles * 1.60934).toFixed(1);
 }
 
-window.calculateWeeksUntilRace = function() {
-    if (!window.trainingData) {
-        console.error('Training data not loaded');
-        return 0;
-    }
-    const raceDay = new Date(window.trainingData.raceday);
-    const today = new Date();
-    const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
-    
-    const weeksDifference = Math.floor((raceDay - today) / millisecondsPerWeek);
-    return weeksDifference > 0 ? weeksDifference : 0;
-}
-
 window.findCurrentWeekIndex = function(weeks) {
     const now = new Date();
     
