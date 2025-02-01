@@ -1,5 +1,4 @@
 window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
-    // Calculate total distance excluding rest days
     const actualRuns = week.runs.filter(run => run.type !== 'Rest');
     const totalDistance = actualRuns.reduce((sum, run) => sum + run.distance, 0);
     const distance = useKm ? totalDistance : convertToKm(totalDistance);
@@ -82,35 +81,4 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     });
 
     return weekEl;
-}
-
-function findCurrentWeekIndex(weeks) {
-    const now = new Date();
-    
-    // First try to find the current week
-    for (let i = 0; i < weeks.length; i++) {
-        const weekDates = weeks[i].runs.map(run => new Date(run.date));
-        const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
-        while (monday.getDay() !== 1) {
-            monday.setDate(monday.getDate() - 1);
-        }
-        
-        const sunday = new Date(monday);
-        sunday.setDate(monday.getDate() + 6);
-        
-        if (now >= monday && now <= sunday) {
-            return i;
-        }
-    }
-    
-    // If no current week found, find the closest future week
-    for (let i = 0; i < weeks.length; i++) {
-        const weekDates = weeks[i].runs.map(run => new Date(run.date));
-        const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
-        if (monday > now) {
-            return i;
-        }
-    }
-    
-    return 0;
 }
