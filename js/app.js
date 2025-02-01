@@ -34,17 +34,17 @@ async function initializeApp() {
     weekContainer.scrollLeft = currentWeekIndex * weekWidth;
 
     // Add scroll event listener to scroll to top when changing weeks
-    let lastScrollLeft = weekContainer.scrollLeft;
-    weekContainer.addEventListener('scroll', () => {
-        const currentScrollLeft = weekContainer.scrollLeft;
-        const weekWidth = window.innerWidth;
+    // let lastScrollLeft = weekContainer.scrollLeft;
+    // weekContainer.addEventListener('scroll', () => {
+    //     const currentScrollLeft = weekContainer.scrollLeft;
+    //     const weekWidth = window.innerWidth;
         
-        // Check if we've scrolled to a new week
-        if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
-        }
-    });
+    //     // Check if we've scrolled to a new week
+    //     if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
+    //         window.scrollTo({ top: 0, behavior: 'smooth' });
+    //         lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
+    //     }
+    // });
 
     // Add touch event listeners for smoother scrolling behavior
     let touchStartX = 0;
