@@ -49,9 +49,8 @@ body {
 }
 
 .week-container {
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     display: flex;
     scroll-behavior: smooth;
     flex-direction: row;
