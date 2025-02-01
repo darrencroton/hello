@@ -5,6 +5,7 @@ async function initializeApp() {
         return;
     }
 
+    const weeksUntilRace = window.calculateWeeksUntilRace();
     const useKm = data.units === 'kilometers';
     const weekContainer = document.createElement('div');
     weekContainer.className = 'week-container';
