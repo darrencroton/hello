@@ -51,7 +51,7 @@ body {
 .week-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: none;
     display: flex;
     scroll-behavior: smooth;
     flex-direction: row;
