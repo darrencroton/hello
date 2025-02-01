@@ -1,172 +1,90 @@
 {
   "weeks": [
     {
-      "weekNumber": 51,
-      "startDate": "2023-12-16",
       "stats": {
-        "totalDistance": 29.5,
-        "averagePace": "6:08",
-        "averageHR": 142,
-        "averagePower": 262,
-        "totalDuration": "3:04:47",
-        "totalRuns": 3,
-        "totalElevation": 329
+        "totalDistance": 29.5
       },
       "runs": [
         {
           "date": "2023-12-24",
           "type": "Christmas Eve Run",
           "distance": 16.4,
-          "duration": "1:48:29",
-          "heartRate": 160,
-          "power": 285,
-          "temperature": 14,
-          "vo2max": 47.8,
-          "trimp": 233
+          "notes": "Easy 16km through the neighborhood"
         },
         {
           "date": "2023-12-26",
           "type": "Easy Run",
           "distance": 6.1,
-          "duration": "44:48",
-          "heartRate": 129,
-          "power": 247,
-          "temperature": 23,
-          "vo2max": 47.8,
-          "trimp": 92
+          "notes": "Recovery run after Christmas"
         },
         {
           "date": "2023-12-28",
           "type": "Easy Run",
           "distance": 7.0,
-          "duration": "51:31",
-          "heartRate": 137,
-          "power": 253,
-          "temperature": 17,
-          "vo2max": 47.8,
-          "trimp": 95
+          "notes": "Easy run with some strides"
         }
       ]
     },
     {
-      "weekNumber": 52,
-      "startDate": "2023-12-23",
       "stats": {
-        "totalDistance": 38.4,
-        "averagePace": "6:11",
-        "averageHR": 147,
-        "averagePower": 261,
-        "totalDuration": "4:35:34",
-        "totalRuns": 3,
-        "totalElevation": 486
+        "totalDistance": 38.4
       },
       "runs": [
         {
           "date": "2024-01-02",
           "type": "Long Run",
           "distance": 21.1,
-          "duration": "2:33:12",
-          "heartRate": 142,
-          "power": 263,
-          "temperature": 15,
-          "vo2max": 47.8,
-          "trimp": 201
+          "notes": "Half marathon distance at easy pace"
         },
         {
           "date": "2024-01-04",
           "type": "Recovery Run",
           "distance": 7.3,
-          "duration": "58:17",
-          "heartRate": 139,
-          "power": 231,
-          "temperature": 24,
-          "vo2max": 47.8,
-          "trimp": 85
+          "notes": "Easy recovery after yesterday's long run"
         },
         {
           "date": "2024-01-06",
           "type": "Tempo Run",
           "distance": 10.0,
-          "duration": "1:04:05",
-          "heartRate": 159,
-          "power": 290,
-          "temperature": 15,
-          "vo2max": 47.8,
-          "trimp": 140
+          "notes": "10km with 5km at tempo pace"
         }
       ]
     },
     {
-      "weekNumber": 1,
-      "startDate": "2024-01-01",
       "stats": {
-        "totalDistance": 26.5,
-        "averagePace": "6:19",
-        "averageHR": 147,
-        "averagePower": 274,
-        "totalDuration": "2:59:25",
-        "totalRuns": 2,
-        "totalElevation": 271
+        "totalDistance": 26.5
       },
       "runs": [
         {
           "date": "2024-01-11",
           "type": "Recovery Short Run",
           "distance": 12.1,
-          "duration": "1:21:13",
-          "heartRate": 148,
-          "power": 274,
-          "temperature": 25,
-          "vo2max": 47.7,
-          "trimp": 132
+          "notes": "Easy run around the park"
         },
         {
           "date": "2024-01-13",
           "type": "Recovery Short Run",
           "distance": 14.4,
-          "duration": "1:38:12",
-          "heartRate": 146,
-          "power": 274,
-          "temperature": 24,
-          "vo2max": 47.8,
-          "trimp": 139
+          "notes": "Longer easy run with hills"
         }
       ]
     },
     {
-      "weekNumber": 2,
-      "startDate": "2024-01-08",
       "stats": {
-        "totalDistance": 31.1,
-        "averagePace": "6:21",
-        "averageHR": 148,
-        "averagePower": 262,
-        "totalDuration": "3:34:08",
-        "totalRuns": 2,
-        "totalElevation": 328
+        "totalDistance": 31.1
       },
       "runs": [
         {
           "date": "2024-01-15",
           "type": "Easy Run",
           "distance": 12.3,
-          "duration": "1:24:36",
-          "heartRate": 144,
-          "power": 272,
-          "temperature": 12,
-          "vo2max": 47.6,
-          "trimp": 123
+          "notes": "Easy-paced morning run"
         },
         {
           "date": "2024-01-19",
           "type": "Easy Run",
           "distance": 7.0,
-          "duration": "40:23",
-          "heartRate": 147,
-          "power": 268,
-          "temperature": 27,
-          "vo2max": 47.1,
-          "trimp": 75
+          "notes": "Short and easy recovery run"
         }
       ]
     }
