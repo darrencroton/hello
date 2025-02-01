@@ -53,7 +53,7 @@ window.convertToKm = function(miles) {
 }
 
 window.calculateWeeksUntilRace = function() {
-    const raceDay = new Date(2025, 3, 27); // April 27th 2025
+    const raceDay = new Date(window.trainingData.raceday);
     const today = new Date();
     const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
     
