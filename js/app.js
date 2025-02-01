@@ -55,6 +55,12 @@ async function initializeApp() {
         lastScrollLeft = weekContainer.scrollLeft;
     });
 
+    weekContainer.addEventListener('touchmove', (e) => {
+        e.preventDefault(); // Prevent default scroll
+        const touchDelta = touchStartX - e.touches[0].clientX;
+        weekContainer.scrollLeft = touchStartScroll + touchDelta;
+    });
+
     weekContainer.addEventListener('touchend', (e) => {
         const weekWidth = window.innerWidth;
         const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
