@@ -160,26 +160,3 @@ body {
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
-
-.week-container {
-    -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
-    overflow-x: scroll; /* Ensure horizontal scrolling is enabled */
-    overflow-y: hidden; /* Prevent vertical scrolling */
-    scroll-behavior: smooth; /* Adds smooth scrolling */
-    overscroll-behavior-x: contain; /* Prevents bouncing effect */
-    -webkit-scroll-snap-type: x mandatory; /* Adds snap scrolling */
-    scroll-snap-type: x mandatory;
-    touch-action: pan-x; /* Allows horizontal panning */
-    cursor: grab; /* Optional: changes cursor to indicate scrollability */
-    user-select: none; /* Prevents text selection during scroll */
-    display: flex; /* Helps with scrolling behavior */
-    flex-wrap: nowrap; /* Keeps items in a single row */
-    width: 100%;
-    max-width: 100%;
-}
-
-.week-container > * {
-    scroll-snap-align: start; /* Aligns each child to the start of the scroll container */
-    flex-shrink: 0; /* Prevents items from shrinking */
-    width: 100vw; /* Full viewport width */
-}
