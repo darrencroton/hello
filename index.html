@@ -203,33 +203,39 @@
             }
         }
 
-        function createWeekSummary(week) {
+        function convertToKm(miles) {
+            return (miles * 1.60934).toFixed(1);
+        }
+
+        function createWeekSummary(week, useKm) {
+            const distance = useKm ? week.stats.totalDistance : convertToKm(week.stats.totalDistance);
             const summaryEl = document.createElement('div');
             summaryEl.className = 'week-summary';
             
             summaryEl.innerHTML = `
                 <div class="week-summary-title">${getDateRange(week)}</div>
-                <div class="total-distance">Total distance: ${week.stats.totalDistance}km</div>
+                <div class="total-distance">Total distance: ${distance}km</div>
             `;
             
             return summaryEl;
         }
 
-        function createWeekElement(week) {
+        function createWeekElement(week, useKm) {
             const weekEl = document.createElement('div');
             weekEl.className = 'week';
             
-            weekEl.appendChild(createWeekSummary(week));
+            weekEl.appendChild(createWeekSummary(week, useKm));
 
             week.runs.forEach((run, index) => {
                 const runCard = document.createElement('div');
                 runCard.className = 'run-card';
                 
+                const distance = useKm ? run.distance : convertToKm(run.distance);
                 runCard.innerHTML = `
                     <div class="run-date">${formatDate(run.date)}</div>
                     <div class="run-type">${run.type}</div>
                     <div class="stat">
-                        <div class="stat-value">${run.distance}km</div>
+                        <div class="stat-value">${distance}km</div>
                         <div class="stat-label">Distance</div>
                     </div>
                     ${run.notes ? `<div class="run-notes">${run.notes}</div>` : ''}
@@ -247,6 +253,23 @@
             return weekEl;
         }
 
+        function findCurrentWeekIndex(weeks) {
+            const now = new Date();
+            let closestWeekIndex = 0;
+            let minDaysDiff = Infinity;
+
+            weeks.forEach((week, index) => {
+                const weekDate = new Date(week.runs[0].date);
+                const daysDiff = Math.abs((now - weekDate) / (1000 * 60 * 60 * 24));
+                if (daysDiff < minDaysDiff) {
+                    minDaysDiff = daysDiff;
+                    closestWeekIndex = index;
+                }
+            });
+
+            return closestWeekIndex;
+        }
+
         async function initializeApp() {
             const data = await fetchTrainingData();
             if (!data) {
@@ -254,15 +277,21 @@
                 return;
             }
 
+            const useKm = data.units === 'kilometers';
             const weekContainer = document.createElement('div');
             weekContainer.className = 'week-container';
 
             data.weeks.forEach(week => {
-                weekContainer.appendChild(createWeekElement(week));
+                weekContainer.appendChild(createWeekElement(week, useKm));
             });
 
             document.getElementById('app').innerHTML = '';
             document.getElementById('app').appendChild(weekContainer);
+
+            // Scroll to current/closest week
+            const currentWeekIndex = findCurrentWeekIndex(data.weeks);
+            const weekWidth = window.innerWidth;
+            weekContainer.scrollLeft = currentWeekIndex * weekWidth;
         }
 
         document.addEventListener('DOMContentLoaded', initializeApp);
