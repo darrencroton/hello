@@ -18,3 +18,23 @@ function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
 
     return summaryEl;
 }
+
+function createDayElement(day, useKm) {
+    const dayEl = document.createElement('div');
+    dayEl.className = 'run-card' + (day.type === 'Rest' ? ' rest-day' : '');
+    
+    const distance = day.distance ? (useKm ? day.distance : convertToKm(day.distance)) : 0;
+    dayEl.innerHTML = `
+        <div class="run-date">${formatDate(day.date)}</div>
+        <div class="run-type">${day.type}</div>
+        ${distance > 0 ? `
+            <div class="stat">
+                <div class="stat-value">${distance}km</div>
+                <div class="stat-label">Distance</div>
+            </div>
+        ` : ''}
+        ${day.notes ? `<div class="run-notes">${day.notes}</div>` : ''}
+    `;
+    
+    return dayEl;
+}
