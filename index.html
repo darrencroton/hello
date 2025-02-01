@@ -66,10 +66,11 @@
             font-weight: 600;
         }
 
-        .week-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+        .total-distance {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            font-weight: 500;
         }
 
         .week-container {
@@ -86,20 +87,6 @@
             scroll-snap-align: start;
             padding: 1rem;
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .week-header {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .total-distance {
-            color: var(--text-color);
-            font-size: 1.3rem;
-            margin: 1rem 0;
-            font-weight: 500;
         }
 
         .run-card {
@@ -123,15 +110,9 @@
             margin-bottom: 0.8rem;
         }
 
-        .run-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
         .stat {
             text-align: left;
+            margin-bottom: 0.5rem;
         }
 
         .stat-value {
@@ -159,17 +140,14 @@
             margin: 1rem -1rem;
         }
 
-        @media (max-width: 380px) {
-            .run-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .week-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         .week-container::-webkit-scrollbar {
             display: none;
+        }
+
+        .run-notes {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -196,8 +174,29 @@
         function formatDate(dateStr) {
             const date = new Date(dateStr);
             const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            return `${days[date.getDay()]} • ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            function getOrdinal(n) {
+                const s = ['th', 'st', 'nd', 'rd'];
+                const v = n % 100;
+                return n + (s[(v - 20) % 10] || s[v] || s[0]);
+            }
+            
+            return `${days[date.getDay()]} ${getOrdinal(date.getDate())} ${months[date.getMonth()]}`;
+        }
+
+        function getDateRange(week) {
+            const startDate = new Date(week.runs[week.runs.length - 1].date);
+            const endDate = new Date(week.runs[0].date);
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            function getOrdinal(n) {
+                const s = ['th', 'st', 'nd', 'rd'];
+                const v = n % 100;
+                return n + (s[(v - 20) % 10] || s[v] || s[0]);
+            }
+            
+            return `${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]} to ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
         }
 
         function createWeekSummary(week) {
@@ -205,30 +204,8 @@
             summaryEl.className = 'week-summary';
             
             summaryEl.innerHTML = `
-                <div class="week-summary-title">Week ${week.weekNumber}</div>
+                <div class="week-summary-title">${getDateRange(week)}</div>
                 <div class="total-distance">Total distance: ${week.stats.totalDistance}km</div>
-                <div class="week-stats">
-                    <div class="stat">
-                        <div class="stat-value">${week.stats.averagePace}</div>
-                        <div class="stat-label">Average Pace</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">${week.stats.averageHR}</div>
-                        <div class="stat-label">Average HR</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">${week.stats.averagePower}</div>
-                        <div class="stat-label">Average Power</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">${week.stats.totalElevation}m</div>
-                        <div class="stat-label">Elevation</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">${week.stats.totalRuns}</div>
-                        <div class="stat-label">Total Runs</div>
-                    </div>
-                </div>
             `;
             
             return summaryEl;
@@ -247,32 +224,11 @@
                 runCard.innerHTML = `
                     <div class="run-date">${formatDate(run.date)}</div>
                     <div class="run-type">${run.type}</div>
-                    <div class="run-stats">
-                        <div class="stat">
-                            <div class="stat-value">${run.distance}km</div>
-                            <div class="stat-label">Distance</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">${run.duration}</div>
-                            <div class="stat-label">Duration</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">${run.heartRate}</div>
-                            <div class="stat-label">Avg HR</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">${run.power}</div>
-                            <div class="stat-label">Power</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">${run.vo2max}</div>
-                            <div class="stat-label">VO2max</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">${run.trimp}</div>
-                            <div class="stat-label">TRIMP</div>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-value">${run.distance}km</div>
+                        <div class="stat-label">Distance</div>
                     </div>
+                    ${run.notes ? `<div class="run-notes">${run.notes}</div>` : ''}
                 `;
                 
                 weekEl.appendChild(runCard);
