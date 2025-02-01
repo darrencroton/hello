@@ -1,0 +1,55 @@
+/* Run card base styles */
+.run-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Rest day variants */
+.rest-day {
+    background: var(--rest-day-background);
+}
+
+.rest-day .run-type {
+    color: var(--rest-day-text);
+}
+
+/* Run info */
+.run-date {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.run-type {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+.run-notes {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Stats */
+.stat {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-top: 0.2rem;
+}
