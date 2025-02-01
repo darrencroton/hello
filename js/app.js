@@ -49,31 +49,21 @@ async function initializeApp() {
     // Add touch event listeners for smoother scrolling behavior
     let touchStartX = 0;
     let touchStartScroll = 0;
-    let isDragging = false;
 
     weekContainer.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
         touchStartScroll = weekContainer.scrollLeft;
-        isDragging = false;
     });
 
     weekContainer.addEventListener('touchmove', (e) => {
         const touchDelta = touchStartX - e.touches[0].clientX;
-    
-        // Add a small threshold to distinguish between scroll and tap
-        if (Math.abs(touchDelta) > 10) {
-            isDragging = true;
-            e.preventDefault(); // Prevent default scroll only if we're actually dragging
-            weekContainer.scrollLeft = touchStartScroll + touchDelta;
-        }
+        weekContainer.scrollLeft = touchStartScroll + touchDelta;
     });
 
     weekContainer.addEventListener('touchend', (e) => {
-        if (!isDragging) return; // Ignore if it was just a tap
-
         const weekWidth = window.innerWidth;
         const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
-    
+
         weekContainer.scrollTo({
             left: currentWeek * weekWidth,
             behavior: 'smooth'
