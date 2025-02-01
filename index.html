@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="referrer" content="no-referrer">
-    <title>Darren's Training Log</title>
+    <title>Ballarat Marathon 2025</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -153,7 +153,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Darren's Training Log</h1>
+        <h1>Ballarat Marathon 2025</h1>
     </div>
     <div id="app">
         <div class="loading">Loading training data...</div>
@@ -197,9 +197,9 @@
             }
             
             if (startDate.getMonth() === endDate.getMonth()) {
-                return `${getOrdinal(startDate.getDate())} - ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
+                return `${getOrdinal(endDate.getDate())} - ${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]}`;
             } else {
-                return `${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]} - ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
+                return `${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]} - ${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]}`;
             }
         }
 
@@ -207,14 +207,26 @@
             return (miles * 1.60934).toFixed(1);
         }
 
+        function calculateWeeksUntilRace() {
+            const raceDay = new Date(2025, 3, 27); // 27th April 2025 (months are 0-indexed)
+            const today = new Date();
+            const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
+            
+            const weeksDifference = Math.ceil((raceDay - today) / millisecondsPerWeek);
+            return weeksDifference > 0 ? weeksDifference : 0;
+        }
+
         function createWeekSummary(week, useKm) {
             const distance = useKm ? week.stats.totalDistance : convertToKm(week.stats.totalDistance);
             const summaryEl = document.createElement('div');
             summaryEl.className = 'week-summary';
             
+            const weeksUntilRace = calculateWeeksUntilRace();
+            
             summaryEl.innerHTML = `
                 <div class="week-summary-title">${getDateRange(week)}</div>
-                <div class="total-distance">Total distance: ${distance}km</div>
+                <div class="total-distance">${weeksUntilRace} weeks until race day</div>
+                <div class="total-distance">Weekly distance: ${distance}km</div>
             `;
             
             return summaryEl;
