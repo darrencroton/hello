@@ -1,4 +1,4 @@
-function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
+window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
     // Calculate total distance excluding rest days
     const actualRuns = week.runs.filter(run => run.type !== 'Rest');
     const totalDistance = actualRuns.reduce((sum, run) => sum + run.distance, 0);
@@ -19,7 +19,7 @@ function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
     return summaryEl;
 }
 
-function createDayElement(day, useKm) {
+window.createDayElement = function(day, useKm) {
     const dayEl = document.createElement('div');
     dayEl.className = 'run-card' + (day.type === 'Rest' ? ' rest-day' : '');
     
@@ -39,7 +39,7 @@ function createDayElement(day, useKm) {
     return dayEl;
 }
 
-function createWeekElement(week, weekNumber, totalWeeks, useKm) {
+window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     const weekEl = document.createElement('div');
     weekEl.className = 'week';
     
