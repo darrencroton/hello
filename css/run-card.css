@@ -1,51 +1,57 @@
-/* Run card styles */
 .run-card {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.run-card:last-child {
-    border-bottom: none;
+.rest-day {
+    background: var(--rest-day-background);
 }
 
-.run-card:hover {
-    background-color: var(--highlight-background);
-}
-
-.run-card.rest-day {
-    background-color: var(--rest-day-background);
-}
-
-.run-card.rest-day .run-title,
-.run-card.rest-day .run-details {
+.rest-day .run-type {
     color: var(--rest-day-text);
 }
 
-.run-title {
+.run-date {
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
-.run-details {
-    color: var(--secondary-text);
-    font-size: 0.9rem;
+.run-type {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
 }
 
-.run-stats {
-    text-align: right;
+.stat {
+    text-align: left;
+    margin-bottom: 0.5rem;
 }
 
-.run-distance {
+.stat-value {
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
 
-.run-pace {
+.stat-label {
+    font-size: 0.8rem;
     color: var(--secondary-text);
+    margin-top: 0.2rem;
+}
+
+.run-notes {
+    color: var(--text-color);
     font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.week-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1rem -1rem;
 }
