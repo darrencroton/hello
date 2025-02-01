@@ -196,7 +196,11 @@
                 return n + (s[(v - 20) % 10] || s[v] || s[0]);
             }
             
-            return `${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]} to ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
+            if (startDate.getMonth() === endDate.getMonth()) {
+                return `${getOrdinal(startDate.getDate())} - ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
+            } else {
+                return `${getOrdinal(startDate.getDate())} ${months[startDate.getMonth()]} - ${getOrdinal(endDate.getDate())} ${months[endDate.getMonth()]}`;
+            }
         }
 
         function createWeekSummary(week) {
