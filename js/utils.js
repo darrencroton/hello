@@ -2,7 +2,7 @@ window.fetchTrainingData = async function() {
     try {
         const response = await fetch('data/training.json');
         const data = await response.json();
-        window.trainingData = data; // Make data globally accessible
+        window.trainingData = data;
         return data;
     } catch (error) {
         console.error('Error loading training data:', error);
@@ -10,16 +10,16 @@ window.fetchTrainingData = async function() {
     }
 }
 
+function getOrdinal(n) {
+    const s = ['th', 'st', 'nd', 'rd'];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
 window.formatDate = function(dateStr) {
     const date = new Date(dateStr);
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    
-    function getOrdinal(n) {
-        const s = ['th', 'st', 'nd', 'rd'];
-        const v = n % 100;
-        return n + (s[(v - 20) % 10] || s[v] || s[0]);
-    }
     
     return `${days[date.getDay()]} ${getOrdinal(date.getDate())} ${months[date.getMonth()]}`;
 }
@@ -35,12 +35,6 @@ window.getDateRange = function(week) {
     sunday.setDate(monday.getDate() + 6);
     
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    
-    function getOrdinal(n) {
-        const s = ['th', 'st', 'nd', 'rd'];
-        const v = n % 100;
-        return n + (s[(v - 20) % 10] || s[v] || s[0]);
-    }
     
     if (monday.getMonth() === sunday.getMonth()) {
         return `${getOrdinal(monday.getDate())} - ${getOrdinal(sunday.getDate())} ${months[monday.getMonth()]}`;
