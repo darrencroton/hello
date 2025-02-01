@@ -1,35 +1,67 @@
 {
+    "units": "kilometers",
     "weeks": [
         {
-            "title": "Week 1",
             "runs": [
                 {
-                    "title": "Easy Run",
-                    "details": "Morning run around the park",
-                    "distance": 5.0,
-                    "pace": 5.5
+                    "date": "2025-01-27",
+                    "type": "Easy Run",
+                    "distance": 5,
+                    "notes": "Morning run around the park"
                 },
                 {
-                    "title": "Rest Day",
-                    "type": "rest"
+                    "date": "2025-01-28",
+                    "type": "Rest"
                 },
                 {
-                    "title": "Tempo Run",
-                    "details": "30 min at half marathon pace",
-                    "distance": 8.0,
-                    "pace": 4.8
+                    "date": "2025-01-29",
+                    "type": "Tempo",
+                    "distance": 8,
+                    "notes": "30 min at half marathon pace"
                 },
                 {
-                    "title": "Recovery Run",
-                    "details": "Easy pace",
-                    "distance": 4.0,
-                    "pace": 5.8
+                    "date": "2025-01-30",
+                    "type": "Recovery",
+                    "distance": 4,
+                    "notes": "Easy pace"
                 },
                 {
-                    "title": "Long Run",
-                    "details": "Coastal trail",
-                    "distance": 15.0,
-                    "pace": 5.2
+                    "date": "2025-01-31",
+                    "type": "Long Run",
+                    "distance": 15,
+                    "notes": "Coastal trail"
+                }
+            ]
+        },
+        {
+            "runs": [
+                {
+                    "date": "2025-02-03",
+                    "type": "Easy Run",
+                    "distance": 6,
+                    "notes": "City loop"
+                },
+                {
+                    "date": "2025-02-04",
+                    "type": "Intervals",
+                    "distance": 8,
+                    "notes": "6x800m @ 5k pace"
+                },
+                {
+                    "date": "2025-02-05",
+                    "type": "Rest"
+                },
+                {
+                    "date": "2025-02-06",
+                    "type": "Recovery",
+                    "distance": 5,
+                    "notes": "Recovery pace"
+                },
+                {
+                    "date": "2025-02-07",
+                    "type": "Long Run",
+                    "distance": 18,
+                    "notes": "Trail run"
                 }
             ]
         }
