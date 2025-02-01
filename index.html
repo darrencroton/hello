@@ -10,10 +10,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007AFF;
-            --background-color: #F2F2F7;
-            --text-color: #1C1C1E;
-            --card-background: #FFFFFF;
+            --primary-color: #0A84FF;
+            --background-color: #000000;
+            --card-background: #1C1C1E;
+            --text-color: #FFFFFF;
+            --secondary-text: #98989F;
+            --border-color: #38383A;
+            --highlight-background: #2C2C2E;
         }
 
         * {
@@ -31,18 +34,38 @@
         }
 
         .header {
-            background-color: var(--card-background);
+            background-color: var(--background-color);
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .header h1 {
             font-size: 1.7rem;
             text-align: center;
             font-weight: 600;
+        }
+
+        .week-summary {
+            background-color: var(--card-background);
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .week-summary-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .week-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
 
         .week-container {
@@ -63,6 +86,14 @@
             margin-bottom: 1rem;
             color: var(--primary-color);
             font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .total-distance {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            margin: 1rem;
+            font-weight: 500;
         }
 
         .run-card {
@@ -70,51 +101,60 @@
             border-radius: 12px;
             padding: 1rem;
             margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
         }
 
         .run-date {
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
 
         .run-type {
             color: var(--primary-color);
             font-weight: 500;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .run-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 0.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-top: 0.8rem;
         }
 
         .stat {
-            text-align: center;
+            text-align: left;
         }
 
         .stat-value {
             font-weight: 600;
             font-size: 1.1rem;
+            color: var(--text-color);
         }
 
         .stat-label {
             font-size: 0.8rem;
-            color: #666;
+            color: var(--secondary-text);
+            margin-top: 0.2rem;
         }
 
         .loading {
             text-align: center;
             padding: 2rem;
             font-weight: 500;
+            color: var(--secondary-text);
         }
 
         @media (max-width: 380px) {
             .run-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
+
+        /* iOS-style scroll bar */
+        .week-container::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
@@ -145,14 +185,41 @@
             return `${days[date.getDay()]} • ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
         }
 
+        function createWeekSummary(week) {
+            const summaryEl = document.createElement('div');
+            summaryEl.className = 'week-summary';
+            
+            summaryEl.innerHTML = `
+                <div class="week-summary-title">Week ${week.weekNumber}</div>
+                <div class="total-distance">Total distance: ${week.stats.totalDistance}km</div>
+                <div class="week-stats">
+                    <div class="stat">
+                        <div class="stat-value">${week.stats.averagePace}</div>
+                        <div class="stat-label">Average Pace</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${week.stats.averageHR}</div>
+                        <div class="stat-label">Average HR</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${week.stats.averagePower}</div>
+                        <div class="stat-label">Average Power</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${week.stats.totalRuns}</div>
+                        <div class="stat-label">Total Runs</div>
+                    </div>
+                </div>
+            `;
+            
+            return summaryEl;
+        }
+
         function createWeekElement(week) {
             const weekEl = document.createElement('div');
             weekEl.className = 'week';
             
-            const weekHeader = document.createElement('div');
-            weekHeader.className = 'week-header';
-            weekHeader.textContent = `Week ${week.weekNumber} • ${week.totalDistance}km`;
-            weekEl.appendChild(weekHeader);
+            weekEl.appendChild(createWeekSummary(week));
 
             week.runs.forEach(run => {
                 const runCard = document.createElement('div');
@@ -173,6 +240,10 @@
                         <div class="stat">
                             <div class="stat-value">${run.heartRate}</div>
                             <div class="stat-label">Avg HR</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">${run.power}</div>
+                            <div class="stat-label">Power</div>
                         </div>
                     </div>
                 `;
