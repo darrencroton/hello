@@ -1,45 +1,438 @@
-                document.getElementById('app').innerHTML = '';
-                document.getElementById('app').appendChild(weekContainer);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Training Log</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #F2F2F7;
+            --card-background: #FFFFFF;
+            --text-color: #1C1C1E;
+            --secondary-text: #8E8E93;
+            --border-color: #C6C6C8;
+            --highlight-background: #E5E5EA;
+            --rest-day-background: #F9F9F9;
+            --rest-day-text: #8E8E93;
+        }
 
-                // Scroll to current/closest week
-                const currentWeekIndex = findCurrentWeekIndex(data.weeks);
-                const weekWidth = window.innerWidth;
-                weekContainer.scrollLeft = currentWeekIndex * weekWidth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-                // Add scroll event listener to scroll to top when changing weeks
-                let lastScrollLeft = weekContainer.scrollLeft;
-                weekContainer.addEventListener('scroll', () => {
-                    const currentScrollLeft = weekContainer.scrollLeft;
-                    const weekWidth = window.innerWidth;
-                    
-                    // Check if we've scrolled to a new week
-                    if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
-                    }
-                });
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.4;
+        }
 
-                // Add touch event listeners for smoother scrolling behavior
-                let touchStartX = 0;
-                let touchStartScroll = 0;
+        .header {
+            background-color: var(--card-background);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-                weekContainer.addEventListener('touchstart', (e) => {
-                    touchStartX = e.touches[0].clientX;
-                    touchStartScroll = weekContainer.scrollLeft;
-                    lastScrollLeft = weekContainer.scrollLeft;
-                });
+        .header h1 {
+            font-size: 1.7rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-color);
+        }
 
-                weekContainer.addEventListener('touchend', (e) => {
-                    const weekWidth = window.innerWidth;
-                    const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
-                    weekContainer.scrollTo({
-                        left: currentWeek * weekWidth,
-                        behavior: 'smooth'
-                    });
+        .week-summary {
+            background-color: var(--card-background);
+            padding: 1.2rem;
+            margin: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .week-summary-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .week-progress {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .countdown {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .total-distance {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .week-container {
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            scroll-behavior: smooth;
+            flex-direction: row;
+        }
+
+        .week {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            padding: 1rem;
+        }
+
+        .run-card {
+            background: var(--card-background);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .rest-day {
+            background: var(--rest-day-background);
+        }
+
+        .rest-day .run-type {
+            color: var(--rest-day-text);
+        }
+
+        .run-date {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .run-type {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .stat {
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            margin-top: 0.2rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            font-weight: 500;
+            color: var(--secondary-text);
+        }
+
+        .week-divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 1rem -1rem;
+        }
+
+        .week-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .run-notes {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Training Log</h1>
+    </div>
+    <div id="app">
+        <div class="loading">Loading training data...</div>
+    </div>
+<script>
+    async function fetchTrainingData() {
+        try {
+            const response = await fetch('data/training.json');
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error loading training data:', error);
+            return null;
+        }
+    }
+
+    function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        
+        function getOrdinal(n) {
+            const s = ['th', 'st', 'nd', 'rd'];
+            const v = n % 100;
+            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+        }
+        
+        return `${days[date.getDay()]} ${getOrdinal(date.getDate())} ${months[date.getMonth()]}`;
+    }
+
+    function getDateRange(week) {
+        // Find Monday of the week
+        const dates = week.runs.map(run => new Date(run.date));
+        const monday = new Date(Math.min(...dates.map(d => d.getTime())));
+        while (monday.getDay() !== 1) { // Adjust to Monday
+            monday.setDate(monday.getDate() - 1);
+        }
+        
+        // Get Sunday by adding 6 days
+        const sunday = new Date(monday);
+        sunday.setDate(monday.getDate() + 6);
+        
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        
+        function getOrdinal(n) {
+            const s = ['th', 'st', 'nd', 'rd'];
+            const v = n % 100;
+            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+        }
+        
+        if (monday.getMonth() === sunday.getMonth()) {
+            return `${getOrdinal(monday.getDate())} - ${getOrdinal(sunday.getDate())} ${months[monday.getMonth()]}`;
+        } else {
+            return `${getOrdinal(monday.getDate())} ${months[monday.getMonth()]} - ${getOrdinal(sunday.getDate())} ${months[sunday.getMonth()]}`;
+        }
+    }
+
+    function convertToKm(miles) {
+        return (miles * 1.60934).toFixed(1);
+    }
+
+    function calculateWeeksUntilRace() {
+        const raceDay = new Date(2025, 3, 27); // April 27th 2025
+        const today = new Date();
+        const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
+        
+        const weeksDifference = Math.floor((raceDay - today) / millisecondsPerWeek);
+        return weeksDifference > 0 ? weeksDifference : 0;
+    }
+
+    function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
+        // Calculate total distance excluding rest days
+        const actualRuns = week.runs.filter(run => run.type !== 'Rest');
+        const totalDistance = actualRuns.reduce((sum, run) => sum + run.distance, 0);
+        const distance = useKm ? totalDistance : convertToKm(totalDistance);
+    
+        const summaryEl = document.createElement('div');
+        summaryEl.className = 'week-summary';
+    
+        const weeksUntilRace = calculateWeeksUntilRace();
+    
+        summaryEl.innerHTML = `
+            <div class="week-summary-title">${getDateRange(week)}</div>
+            <div class="week-progress">Week ${weekNumber} of ${totalWeeks}</div>
+            <div class="countdown">${weeksUntilRace} weeks until race day</div>
+            <div class="total-distance">Weekly distance: ${distance}km</div>
+        `;
+    
+        return summaryEl;
+    }
+
+    function createDayElement(day, useKm) {
+        const dayEl = document.createElement('div');
+        dayEl.className = 'run-card' + (day.type === 'Rest' ? ' rest-day' : '');
+        
+        const distance = day.distance ? (useKm ? day.distance : convertToKm(day.distance)) : 0;
+        dayEl.innerHTML = `
+            <div class="run-date">${formatDate(day.date)}</div>
+            <div class="run-type">${day.type}</div>
+            ${distance > 0 ? `
+                <div class="stat">
+                    <div class="stat-value">${distance}km</div>
+                    <div class="stat-label">Distance</div>
+                </div>
+            ` : ''}
+            ${day.notes ? `<div class="run-notes">${day.notes}</div>` : ''}
+        `;
+        
+        return dayEl;
+    }
+
+    function createWeekElement(week, weekNumber, totalWeeks, useKm) {
+        const weekEl = document.createElement('div');
+        weekEl.className = 'week';
+        
+        weekEl.appendChild(createWeekSummary(week, weekNumber, totalWeeks, useKm));
+
+        // Get all days in the week
+        const dates = week.runs.map(run => new Date(run.date));
+        const monday = new Date(Math.min(...dates.map(d => d.getTime())));
+        while (monday.getDay() !== 1) {
+            monday.setDate(monday.getDate() - 1);
+        }
+
+        // Create an array of all days in the week
+        const allDays = [];
+        for (let i = 0; i < 7; i++) {
+            const currentDate = new Date(monday);
+            currentDate.setDate(monday.getDate() + i);
+            const dateStr = currentDate.toISOString().split('T')[0];
+            
+            // Find if there's a run on this day
+            const run = week.runs.find(r => r.date === dateStr);
+            
+            if (run) {
+                allDays.push(run);
+            } else {
+                allDays.push({
+                    date: dateStr,
+                    type: 'Rest',
+                    distance: 0,
+                    notes: ''
                 });
             }
+        }
 
-            document.addEventListener('DOMContentLoaded', initializeApp);
-        </script>
-    </body>
+        allDays.forEach((day, index) => {
+            weekEl.appendChild(createDayElement(day, useKm));
+            
+            if (index < allDays.length - 1) {
+                const divider = document.createElement('div');
+                divider.className = 'week-divider';
+                weekEl.appendChild(divider);
+            }
+        });
+
+        return weekEl;
+    }
+
+    function findCurrentWeekIndex(weeks) {
+        const now = new Date();
+        
+        // First try to find the current week
+        for (let i = 0; i < weeks.length; i++) {
+            const weekDates = weeks[i].runs.map(run => new Date(run.date));
+            const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
+            while (monday.getDay() !== 1) {
+                monday.setDate(monday.getDate() - 1);
+            }
+            
+            const sunday = new Date(monday);
+            sunday.setDate(monday.getDate() + 6);
+            
+            if (now >= monday && now <= sunday) {
+                return i;
+            }
+        }
+        
+        // If no current week found, find the closest future week
+        for (let i = 0; i < weeks.length; i++) {
+            const weekDates = weeks[i].runs.map(run => new Date(run.date));
+            const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
+            if (monday > now) {
+                return i;
+            }
+        }
+        
+        return 0;
+    }
+    async function initializeApp() {
+        const data = await fetchTrainingData();
+        if (!data) {
+            document.getElementById('app').innerHTML = '<div class="loading">Error loading training data</div>';
+            return;
+        }
+
+        const useKm = data.units === 'kilometers';
+        const weekContainer = document.createElement('div');
+        weekContainer.className = 'week-container';
+
+        // Calculate total weeks in the program
+        const totalWeeks = data.weeks.length;
+
+        // Find the start date of the program (first Monday)
+        const firstWeekDates = data.weeks[data.weeks.length - 1].runs.map(run => new Date(run.date));
+        const programStart = new Date(Math.min(...firstWeekDates.map(d => d.getTime())));
+        while (programStart.getDay() !== 1) {
+            programStart.setDate(programStart.getDate() - 1);
+        }
+
+        data.weeks.forEach((week, index) => {
+            const weekNumber = data.weeks.length - index;  // Count down from total weeks
+            weekContainer.appendChild(createWeekElement(week, weekNumber, totalWeeks, useKm));
+        });
+
+        document.getElementById('app').innerHTML = '';
+        document.getElementById('app').appendChild(weekContainer);
+
+        // Scroll to current/closest week
+        const currentWeekIndex = findCurrentWeekIndex(data.weeks);
+        const weekWidth = window.innerWidth;
+        weekContainer.scrollLeft = currentWeekIndex * weekWidth;
+
+        // Add scroll event listener to scroll to top when changing weeks
+        let lastScrollLeft = weekContainer.scrollLeft;
+        weekContainer.addEventListener('scroll', () => {
+            const currentScrollLeft = weekContainer.scrollLeft;
+            const weekWidth = window.innerWidth;
+            
+            // Check if we've scrolled to a new week
+            if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
+            }
+        });
+
+        // Add touch event listeners for smoother scrolling behavior
+        let touchStartX = 0;
+        let touchStartScroll = 0;
+
+        weekContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartScroll = weekContainer.scrollLeft;
+            lastScrollLeft = weekContainer.scrollLeft;
+        });
+
+        weekContainer.addEventListener('touchend', (e) => {
+            const weekWidth = window.innerWidth;
+            const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
+            weekContainer.scrollTo({
+                left: currentWeek * weekWidth,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeApp);
+</script>
+</body>
 </html>
