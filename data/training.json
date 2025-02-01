@@ -1,0 +1,68 @@
+{
+  "weeks": [
+    {
+      "weekNumber": 47,
+      "startDate": "2024-11-18",
+      "totalDistance": 48.7,
+      "averagePace": "5:37:53",
+      "averageHR": 142,
+      "averagePower": 269,
+      "runs": [
+        {
+          "date": "2024-11-19",
+          "dayOfWeek": "Tuesday",
+          "type": "Easy Run",
+          "distance": 7.0,
+          "duration": "40:23",
+          "averagePace": "5:54/km",
+          "heartRate": 147,
+          "power": 268,
+          "temperature": 27
+        },
+        {
+          "date": "2024-11-21",
+          "dayOfWeek": "Thursday",
+          "type": "Easy Run",
+          "distance": 8.2,
+          "duration": "56:53",
+          "averagePace": "6:53/km",
+          "heartRate": 146,
+          "power": 267,
+          "temperature": 17
+        },
+        {
+          "date": "2024-11-24",
+          "dayOfWeek": "Sunday",
+          "type": "Easy Run",
+          "distance": 12.3,
+          "duration": "1:27:36",
+          "averagePace": "7:11/km",
+          "heartRate": 145,
+          "power": 259,
+          "temperature": 18
+        }
+      ]
+    },
+    {
+      "weekNumber": 48,
+      "startDate": "2024-11-25",
+      "totalDistance": 51.8,
+      "averagePace": "6:06:07",
+      "averageHR": 146,
+      "averagePower": 271,
+      "runs": [
+        {
+          "date": "2024-11-26",
+          "dayOfWeek": "Tuesday",
+          "type": "Long Run",
+          "distance": 17.4,
+          "duration": "2:02:02",
+          "averagePace": "7:02/km",
+          "heartRate": 156,
+          "power": 262,
+          "temperature": 25
+        }
+      ]
+    }
+  ]
+}
