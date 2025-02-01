@@ -47,28 +47,28 @@ async function initializeApp() {
     // });
 
     // Add touch event listeners for smoother scrolling behavior
-    let touchStartX = 0;
-    let touchStartScroll = 0;
+    // let touchStartX = 0;
+    // let touchStartScroll = 0;
 
-    weekContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartScroll = weekContainer.scrollLeft;
-    });
+    // weekContainer.addEventListener('touchstart', (e) => {
+    //     touchStartX = e.touches[0].clientX;
+    //     touchStartScroll = weekContainer.scrollLeft;
+    // });
 
-    weekContainer.addEventListener('touchmove', (e) => {
-        const touchDelta = touchStartX - e.touches[0].clientX;
-        weekContainer.scrollLeft = touchStartScroll + touchDelta;
-    });
+    // weekContainer.addEventListener('touchmove', (e) => {
+    //     const touchDelta = touchStartX - e.touches[0].clientX;
+    //     weekContainer.scrollLeft = touchStartScroll + touchDelta;
+    // });
 
-    weekContainer.addEventListener('touchend', (e) => {
-        const weekWidth = window.innerWidth;
-        const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
+    // weekContainer.addEventListener('touchend', (e) => {
+    //     const weekWidth = window.innerWidth;
+    //     const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
 
-        weekContainer.scrollTo({
-            left: currentWeek * weekWidth,
-            behavior: 'smooth'
-        });
-    });
+    //     weekContainer.scrollTo({
+    //         left: currentWeek * weekWidth,
+    //         behavior: 'smooth'
+    //     });
+    // });
 }
 
 document.addEventListener('DOMContentLoaded', initializeApp);
