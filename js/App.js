@@ -1,4 +1,5 @@
 import { createWeek } from './components/Week.js';
+import { initializeScroll } from './scroll.js';
 
 /**
  * Fetch training data from JSON file
@@ -81,6 +82,9 @@ async function initializeApp() {
     // Scroll to current week
     const currentWeekIndex = findCurrentWeekIndex(data.weeks);
     weekContainer.scrollLeft = currentWeekIndex * window.innerWidth;
+
+    // Initialize scroll behavior
+    initializeScroll(weekContainer);
 }
 
 // Initialize app when DOM is loaded
