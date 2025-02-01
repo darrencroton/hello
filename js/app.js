@@ -1,77 +1,68 @@
-// Format distance in kilometers
-const formatDistance = (distance) => {
-    return `${distance.toFixed(1)} km`;
-};
-
-// Format pace in minutes per kilometer
-const formatPace = (pace) => {
-    const minutes = Math.floor(pace);
-    const seconds = Math.round((pace - minutes) * 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}/km`;
-};
-
-// Create a run card element
-const createRunCard = (run) => {
-    const card = document.createElement('div');
-    card.className = `run-card ${run.type === 'rest' ? 'rest-day' : ''}`;
-    
-    card.innerHTML = `
-        <div class="run-info">
-            <div class="run-title">${run.title}</div>
-            <div class="run-details">${run.details || ''}</div>
-        </div>
-        <div class="run-stats">
-            ${run.type !== 'rest' ? `
-                <div class="run-distance">${formatDistance(run.distance)}</div>
-                <div class="run-pace">${formatPace(run.pace)}</div>
-            ` : ''}
-        </div>
-    `;
-    
-    return card;
-};
-
-// Create a week container
-const createWeekContainer = (weekData) => {
-    const container = document.createElement('div');
-    container.className = 'week';
-    
-    const totalDistance = weekData.runs
-        .filter(run => run.type !== 'rest')
-        .reduce((sum, run) => sum + run.distance, 0);
-    
-    container.innerHTML = `
-        <div class="week-header">
-            <div class="week-title">${weekData.title}</div>
-            <div class="week-summary">${formatDistance(totalDistance)}</div>
-        </div>
-    `;
-    
-    weekData.runs.forEach(run => {
-        container.appendChild(createRunCard(run));
-    });
-    
-    return container;
-};
-
-// Initialize the app
-const initApp = async () => {
-    try {
-        const response = await fetch('data/training.json');
-        const data = await response.json();
-        
-        const app = document.getElementById('app');
-        app.innerHTML = ''; // Clear loading message
-        
-        data.weeks.forEach(week => {
-            app.appendChild(createWeekContainer(week));
-        });
-    } catch (error) {
-        console.error('Error loading training data:', error);
-        const app = document.getElementById('app');
-        app.innerHTML = '<div class="loading">Error loading training data</div>';
+async function initializeApp() {
+    const data = await fetchTrainingData();
+    if (!data) {
+        document.getElementById('app').innerHTML = '<div class="loading">Error loading training data</div>';
+        return;
     }
-};
 
-// Start the app when the DOM is loaded
-document.addEventListener('DOMContentLoaded', initApp);
+    const useKm = data.units === 'kilometers';
+    const weekContainer = document.createElement('div');
+    weekContainer.className = 'week-container';
+
+    // Calculate total weeks in the program
+    const totalWeeks = data.weeks.length;
+
+    // Find the start date of the program (first Monday)
+    const firstWeekDates = data.weeks[data.weeks.length - 1].runs.map(run => new Date(run.date));
+    const programStart = new Date(Math.min(...firstWeekDates.map(d => d.getTime())));
+    while (programStart.getDay() !== 1) {
+        programStart.setDate(programStart.getDate() - 1);
+    }
+
+    data.weeks.forEach((week, index) => {
+        const weekNumber = data.weeks.length - index;  // Count down from total weeks
+        weekContainer.appendChild(createWeekElement(week, weekNumber, totalWeeks, useKm));
+    });
+
+    document.getElementById('app').innerHTML = '';
+    document.getElementById('app').appendChild(weekContainer);
+
+    // Scroll to current/closest week
+    const currentWeekIndex = findCurrentWeekIndex(data.weeks);
+    const weekWidth = window.innerWidth;
+    weekContainer.scrollLeft = currentWeekIndex * weekWidth;
+
+    // Add scroll event listener to scroll to top when changing weeks
+    let lastScrollLeft = weekContainer.scrollLeft;
+    weekContainer.addEventListener('scroll', () => {
+        const currentScrollLeft = weekContainer.scrollLeft;
+        const weekWidth = window.innerWidth;
+        
+        // Check if we've scrolled to a new week
+        if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
+        }
+    });
+
+    // Add touch event listeners for smoother scrolling behavior
+    let touchStartX = 0;
+    let touchStartScroll = 0;
+
+    weekContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartScroll = weekContainer.scrollLeft;
+        lastScrollLeft = weekContainer.scrollLeft;
+    });
+
+    weekContainer.addEventListener('touchend', (e) => {
+        const weekWidth = window.innerWidth;
+        const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
+        weekContainer.scrollTo({
+            left: currentWeek * weekWidth,
+            behavior: 'smooth'
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeApp);
