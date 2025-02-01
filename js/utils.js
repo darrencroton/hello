@@ -1,4 +1,4 @@
-async function fetchTrainingData() {
+window.fetchTrainingData = async function() {
     try {
         const response = await fetch('data/training.json');
         const data = await response.json();
@@ -9,7 +9,7 @@ async function fetchTrainingData() {
     }
 }
 
-function formatDate(dateStr) {
+window.formatDate = function(dateStr) {
     const date = new Date(dateStr);
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -23,7 +23,7 @@ function formatDate(dateStr) {
     return `${days[date.getDay()]} ${getOrdinal(date.getDate())} ${months[date.getMonth()]}`;
 }
 
-function getDateRange(week) {
+window.getDateRange = function(week) {
     const dates = week.runs.map(run => new Date(run.date));
     const monday = new Date(Math.min(...dates.map(d => d.getTime())));
     while (monday.getDay() !== 1) {
@@ -48,11 +48,11 @@ function getDateRange(week) {
     }
 }
 
-function convertToKm(miles) {
+window.convertToKm = function(miles) {
     return (miles * 1.60934).toFixed(1);
 }
 
-function calculateWeeksUntilRace() {
+window.calculateWeeksUntilRace = function() {
     const raceDay = new Date(2025, 3, 27); // April 27th 2025
     const today = new Date();
     const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
@@ -61,7 +61,7 @@ function calculateWeeksUntilRace() {
     return weeksDifference > 0 ? weeksDifference : 0;
 }
 
-function findCurrentWeekIndex(weeks) {
+window.findCurrentWeekIndex = function(weeks) {
     const now = new Date();
     
     // First try to find the current week
