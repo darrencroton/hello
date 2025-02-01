@@ -1,90 +1,736 @@
 {
   "weeks": [
     {
+      "weekNumber": 1,
+      "startDate": "2024-12-09",
       "stats": {
-        "totalDistance": 29.5
+        "totalDistance": 19,
+        "totalRuns": 4
       },
       "runs": [
         {
-          "date": "2023-12-24",
-          "type": "Christmas Eve Run",
-          "distance": 16.4,
-          "notes": "Easy 16km through the neighborhood"
-        },
-        {
-          "date": "2023-12-26",
-          "type": "Easy Run",
-          "distance": 6.1,
-          "notes": "Recovery run after Christmas"
-        },
-        {
-          "date": "2023-12-28",
-          "type": "Easy Run",
-          "distance": 7.0,
-          "notes": "Easy run with some strides"
-        }
-      ]
-    },
-    {
-      "stats": {
-        "totalDistance": 38.4
-      },
-      "runs": [
-        {
-          "date": "2024-01-02",
+          "date": "2024-12-09",
           "type": "Long Run",
-          "distance": 21.1,
-          "notes": "Half marathon distance at easy pace"
+          "distance": 3,
+          "notes": "Long Run 3 miles easy"
         },
         {
-          "date": "2024-01-04",
-          "type": "Recovery Run",
-          "distance": 7.3,
-          "notes": "Easy recovery after yesterday's long run"
+          "date": "2024-12-11",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 3 miles + 1 x 8-sec hill sprint"
         },
         {
-          "date": "2024-01-06",
-          "type": "Tempo Run",
-          "distance": 10.0,
-          "notes": "10km with 5km at tempo pace"
+          "date": "2024-12-12",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2024-12-14",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 3 miles + 1 x 8-sec hill sprint"
         }
       ]
     },
     {
+      "weekNumber": 2,
+      "startDate": "2024-12-16",
       "stats": {
-        "totalDistance": 26.5
+        "totalDistance": 21,
+        "totalRuns": 4
       },
       "runs": [
         {
-          "date": "2024-01-11",
-          "type": "Recovery Short Run",
-          "distance": 12.1,
-          "notes": "Easy run around the park"
+          "date": "2024-12-16",
+          "type": "Long Run",
+          "distance": 4,
+          "notes": "Long Run 4 miles easy"
         },
         {
-          "date": "2024-01-13",
-          "type": "Recovery Short Run",
-          "distance": 14.4,
-          "notes": "Longer easy run with hills"
+          "date": "2024-12-18",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 4 miles + 2 x 8-sec hill sprint"
+        },
+        {
+          "date": "2024-12-19",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2024-12-21",
+          "type": "Easy Run",
+          "distance": 5,
+          "notes": "Easy Run 4 miles + 1 x 8-sec hill sprint"
         }
       ]
     },
     {
+      "weekNumber": 3,
+      "startDate": "2024-12-23",
       "stats": {
-        "totalDistance": 31.1
+        "totalDistance": 27,
+        "totalRuns": 4
       },
       "runs": [
         {
-          "date": "2024-01-15",
-          "type": "Easy Run",
-          "distance": 12.3,
-          "notes": "Easy-paced morning run"
+          "date": "2024-12-23",
+          "type": "Progression Run",
+          "distance": 5,
+          "notes": "Progression Run 5 miles, last 10 min. moderate"
         },
         {
-          "date": "2024-01-19",
+          "date": "2024-12-25",
           "type": "Easy Run",
-          "distance": 7.0,
-          "notes": "Short and easy recovery run"
+          "distance": 6,
+          "notes": "Easy Run 4 miles + 2 x 8-sec hill sprint"
+        },
+        {
+          "date": "2024-12-26",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2024-12-28",
+          "type": "Easy Run",
+          "distance": 7,
+          "notes": "Easy Run 5 miles + 2 x 8-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "startDate": "2024-12-30",
+      "stats": {
+        "totalDistance": 32,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2024-12-30",
+          "type": "Progression Run",
+          "distance": 6,
+          "notes": "Progression Run 6 miles, last 10 min. moderate (uphill if possible)"
+        },
+        {
+          "date": "2025-01-01",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 5 miles + 3 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-01-02",
+          "type": "Fartlek Run",
+          "distance": 7,
+          "notes": "Fartlek Run 7 miles w/6 x 30 sec. @ 10K-3K pace"
+        },
+        {
+          "date": "2025-01-04",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 5 miles + 3 x 8-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "startDate": "2025-01-06",
+      "stats": {
+        "totalDistance": 35,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-01-06",
+          "type": "Progression Run",
+          "distance": 7,
+          "notes": "Progression Run 7 miles, last 20 min. moderate (uphill if possible)"
+        },
+        {
+          "date": "2025-01-08",
+          "type": "Easy Run",
+          "distance": 9,
+          "notes": "Easy Run 5 miles + 4 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-01-09",
+          "type": "Fartlek Run",
+          "distance": 8,
+          "notes": "Fartlek Run 8 miles w/6 x 40 sec. @ 10K-3K pace"
+        },
+        {
+          "date": "2025-01-11",
+          "type": "Easy Run",
+          "distance": 11,
+          "notes": "Easy Run 7 miles + 4 x 8-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "startDate": "2025-01-13",
+      "stats": {
+        "totalDistance": 35,
+        "totalRuns": 5
+      },
+      "runs": [
+        {
+          "date": "2025-01-13",
+          "type": "Progression Run",
+          "distance": 7,
+          "notes": "Progression Run 7 miles, last 20 min. moderate (uphill if possible)"
+        },
+        {
+          "date": "2025-01-15",
+          "type": "Easy Run",
+          "distance": 7,
+          "notes": "Easy Run 3 miles + 4 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-01-16",
+          "type": "Fartlek Run",
+          "distance": 7,
+          "notes": "Fartlek Run 7 miles w/6 x 50 sec. @ 10K-3K pace"
+        },
+        {
+          "date": "2025-01-17",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-01-18",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 4 miles"
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "startDate": "2025-01-20",
+      "stats": {
+        "totalDistance": 35,
+        "totalRuns": 5
+      },
+      "runs": [
+        {
+          "date": "2025-01-20",
+          "type": "Progression Run",
+          "distance": 8,
+          "notes": "Progression Run 8 miles, last 20 min. moderate (uphill if possible)"
+        },
+        {
+          "date": "2025-01-22",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 3 miles + 5 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-01-23",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-01-24",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-01-25",
+          "type": "Progression Run",
+          "distance": 7,
+          "notes": "Progression Run 8 miles, last 15 min. moderate"
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "startDate": "2025-01-27",
+      "stats": {
+        "totalDistance": 36,
+        "totalRuns": 5
+      },
+      "runs": [
+        {
+          "date": "2025-01-27",
+          "type": "Progression Run",
+          "distance": 9,
+          "notes": "Progression Run 9 miles, last 20 min. moderate (uphill if possible)"
+        },
+        {
+          "date": "2025-01-29",
+          "type": "Easy Run",
+          "distance": 9,
+          "notes": "Easy Run 3 miles + 6 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-01-30",
+          "type": "Fartlek Run",
+          "distance": 8,
+          "notes": "Fartlek Run 8 miles w/8 x 50 sec. @ 10K-3K pace"
+        },
+        {
+          "date": "2025-01-31",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-02-01",
+          "type": "Progression Run",
+          "distance": 4,
+          "notes": "Progression Run 6 miles, last 20 min. moderate"
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "startDate": "2025-02-03",
+      "stats": {
+        "totalDistance": 38,
+        "totalRuns": 5
+      },
+      "runs": [
+        {
+          "date": "2025-02-03",
+          "type": "Fartlek Run",
+          "distance": 10,
+          "notes": "Fartlek Run + Progression: 3 miles easy, 3 miles: 1 min. @ 10K pace/1 min. easy, 2 miles easy, 2 miles hard"
+        },
+        {
+          "date": "2025-02-05",
+          "type": "Threshold Run",
+          "distance": 7,
+          "notes": "Threshold Run 2 miles easy, 2 x 10 min. @ half-marathon pace w/2-min. active recovery, 3 miles easy"
+        },
+        {
+          "date": "2025-02-06",
+          "type": "Easy Run",
+          "distance": 9,
+          "notes": "Easy Run 9 miles"
+        },
+        {
+          "date": "2025-02-07",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 4 miles + 8 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-02-08",
+          "type": "Progression Run",
+          "distance": 4,
+          "notes": "Progression Run 10 miles, last 20 min. moderate"
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "startDate": "2025-02-10",
+      "stats": {
+        "totalDistance": 39,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-02-10",
+          "type": "Progression Run",
+          "distance": 11,
+          "notes": "Progression Run 11 miles, last 20 min. hard"
+        },
+        {
+          "date": "2025-02-12",
+          "type": "Intervals",
+          "distance": 9,
+          "notes": "Specific-Endurance Intervals: 3 miles easy, 15 x 1 min. @ 10K pace/1 min. easy recovery, 3 miles easy"
+        },
+        {
+          "date": "2025-02-13",
+          "type": "Easy Run",
+          "distance": 10,
+          "notes": "Easy Run 10 miles"
+        },
+        {
+          "date": "2025-02-14",
+          "type": "Easy Run",
+          "distance": 5,
+          "notes": "Easy Run 5 miles"
+        },
+        {
+          "date": "2025-02-15",
+          "type": "Threshold Run",
+          "distance": 4,
+          "notes": "Threshold Run 2 miles easy, 2 x 15 min. @ half-marathon pace w/3-min. active recovery, 2 miles easy"
+        }
+      ]
+    },
+    {
+      "weekNumber": 11,
+      "startDate": "2025-02-17",
+      "stats": {
+        "totalDistance": 41,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-02-17",
+          "type": "Progression Run",
+          "distance": 12,
+          "notes": "Progression Run 12 miles, last 30 min. hard"
+        },
+        {
+          "date": "2025-02-19",
+          "type": "Hill Repeats",
+          "distance": 6,
+          "notes": "Hill Repetitions 2 miles easy, 6 x 1 min. uphill @ 5K effort w/jog-back recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-02-20",
+          "type": "Easy Run",
+          "distance": 10,
+          "notes": "Easy Run 10 miles"
+        },
+        {
+          "date": "2025-02-21",
+          "type": "Easy Run",
+          "distance": 5,
+          "notes": "Easy Run 5 miles"
+        },
+        {
+          "date": "2025-02-22",
+          "type": "Threshold Run",
+          "distance": 8,
+          "notes": "Threshold Run 2 miles easy, 6 miles @ half-marathon pace, 2 miles easy"
+        }
+      ]
+    },
+    {
+      "weekNumber": 12,
+      "startDate": "2025-02-24",
+      "stats": {
+        "totalDistance": 43,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-02-24",
+          "type": "Long Run",
+          "distance": 14,
+          "notes": "Long Run 14 miles easy"
+        },
+        {
+          "date": "2025-02-26",
+          "type": "Intervals",
+          "distance": 6,
+          "notes": "Specific-Endurance Intervals: 2 miles easy, 8 x 800m @ 10K pace w/2-min. active recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-02-27",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 8 miles"
+        },
+        {
+          "date": "2025-02-28",
+          "type": "Easy Run",
+          "distance": 13,
+          "notes": "Easy Run 5 miles + 8 x 8-sec hill sprint"
+        },
+        {
+          "date": "2025-03-01",
+          "type": "Threshold Run",
+          "distance": 6,
+          "notes": "Threshold Run 2 miles easy, 2 x 15 min. @ half-marathon/10K pace w/3-min. active recovery, 2 miles easy"
+        }
+      ]
+    },
+    {
+      "weekNumber": 13,
+      "startDate": "2025-03-03",
+      "stats": {
+        "totalDistance": 45,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-03-03",
+          "type": "Long Run",
+          "distance": 16,
+          "notes": "Long Run 16 miles easy"
+        },
+        {
+          "date": "2025-03-05",
+          "type": "Hill Repeats",
+          "distance": 6,
+          "notes": "Hill Repetitions 2 miles easy, 6 x 2 min. uphill @ 5K effort w/jog-back recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-03-06",
+          "type": "Easy Run",
+          "distance": 9,
+          "notes": "Easy Run 9 miles"
+        },
+        {
+          "date": "2025-03-07",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 4 miles"
+        },
+        {
+          "date": "2025-03-08",
+          "type": "Progression Run",
+          "distance": 10,
+          "notes": "Progression Run 2 miles easy, 30 min. moderate, 2 miles easy"
+        }
+      ]
+    },
+    {
+      "weekNumber": 14,
+      "startDate": "2025-03-10",
+      "stats": {
+        "totalDistance": 42,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-03-10",
+          "type": "Long Run",
+          "distance": 14,
+          "notes": "Long Run 14 miles easy"
+        },
+        {
+          "date": "2025-03-12",
+          "type": "Intervals",
+          "distance": 8,
+          "notes": "Specific-Endurance Intervals: 2 miles easy, 4 x 1 mile @ 10K pace w/3-min. active recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-03-13",
+          "type": "Easy Run",
+          "distance": 10,
+          "notes": "Easy Run 10 miles"
+        },
+        {
+          "date": "2025-03-14",
+          "type": "Easy Run",
+          "distance": 10,
+          "notes": "Easy Run 6 miles + 8 x 8-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 15,
+      "startDate": "2025-03-17",
+      "stats": {
+        "totalDistance": 43,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-03-17",
+          "type": "Progression Run",
+          "distance": 18,
+          "notes": "Progression Run 18 miles, last 20 min. hard"
+        },
+        {
+          "date": "2025-03-19",
+          "type": "Threshold Run",
+          "distance": 10,
+          "notes": "Threshold Run 2 miles easy, 6 miles @ marathon/half-marathon pace, 2 miles easy"
+        },
+        {
+          "date": "2025-03-20",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-03-21",
+          "type": "Easy Run",
+          "distance": 9,
+          "notes": "Easy Run 4 miles + 10 x 8-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 16,
+      "startDate": "2025-03-24",
+      "stats": {
+        "totalDistance": 42,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-03-24",
+          "type": "Hard Long Run",
+          "distance": 14,
+          "notes": "Hard Long Run 14 miles @ marathon pace + 20 sec/mile"
+        },
+        {
+          "date": "2025-03-26",
+          "type": "Intervals",
+          "distance": 8,
+          "notes": "Ladder Intervals: 2 miles easy, 1-2-3-2-1 min. @ 5K-10K pace w/= duration active recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-03-27",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 8 miles"
+        },
+        {
+          "date": "2025-03-28",
+          "type": "Easy Run",
+          "distance": 12,
+          "notes": "Easy Run 4 miles + 8 x 10-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 17,
+      "startDate": "2025-03-31",
+      "stats": {
+        "totalDistance": 44,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-03-31",
+          "type": "Progression Run",
+          "distance": 22,
+          "notes": "Progression Run 22 miles, last 20 min. hard"
+        },
+        {
+          "date": "2025-04-02",
+          "type": "Threshold Run",
+          "distance": 8,
+          "notes": "Threshold Run 2 miles easy, 2 x 15 min. @ half-marathon/10K pace w/1-min. active recovery, 2 miles easy"
+        },
+        {
+          "date": "2025-04-03",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 6 miles"
+        },
+        {
+          "date": "2025-04-04",
+          "type": "Easy Run",
+          "distance": 8,
+          "notes": "Easy Run 4 miles + 8 x 10-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 18,
+      "startDate": "2025-04-07",
+      "stats": {
+        "totalDistance": 45,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-04-07",
+          "type": "Long Run",
+          "distance": 23,
+          "notes": "Long Run 23 miles easy"
+        },
+        {
+          "date": "2025-04-09",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 4 miles"
+        },
+        {
+          "date": "2025-04-10",
+          "type": "Threshold Run",
+          "distance": 12,
+          "notes": "Threshold Run + Specific-Endurance Intervals: 2 miles easy, 4 miles @ marathon/half-marathon pace, 3 min easy, 4 x 1 mile @ half-marathon/10K pace w/3-min. active recoveries, 2 miles easy"
+        },
+        {
+          "date": "2025-04-11",
+          "type": "Easy Run",
+          "distance": 6,
+          "notes": "Easy Run 4 miles + 8 x 10-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 19,
+      "startDate": "2025-04-14",
+      "stats": {
+        "totalDistance": 40,
+        "totalRuns": 5
+      },
+      "runs": [
+        {
+          "date": "2025-04-14",
+          "type": "Hard Long Run",
+          "distance": 16,
+          "notes": "Hard Long Run 2 miles easy, 14 miles @ marathon pace + 20 sec/mile, 2 miles easy"
+        },
+        {
+          "date": "2025-04-15",
+          "type": "Easy Run",
+          "distance": 5,
+          "notes": "Easy Run 5 miles"
+        },
+        {
+          "date": "2025-04-16",
+          "type": "Threshold Run",
+          "distance": 7,
+          "notes": "Threshold Run 2 miles easy, 2 x 10 min. @ half-marathon pace w/2-min. active recovery, 3 miles easy"
+        },
+        {
+          "date": "2025-04-18",
+          "type": "Easy Run",
+          "distance": 12,
+          "notes": "Easy Run 4 miles + 10 x 10-sec hill sprint"
+        }
+      ]
+    },
+    {
+      "weekNumber": 20,
+      "startDate": "2025-04-21",
+      "stats": {
+        "totalDistance": 25,
+        "totalRuns": 4
+      },
+      "runs": [
+        {
+          "date": "2025-04-21",
+          "type": "Hard Long Run",
+          "distance": 10,
+          "notes": "Hard Long Run 10 miles @ marathon pace + 20 sec/mile"
+        },
+        {
+          "date": "2025-04-23",
+          "type": "Marathon-Pace Run",
+          "distance": 7,
+          "notes": "Marathon-Pace Run 2 miles easy, 4 miles @ marathon pace, 1 mile easy"
+        },
+        {
+          "date": "2025-04-25",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 4 miles"
+        },
+        {
+          "date": "2025-04-26",
+          "type": "Easy Run",
+          "distance": 4,
+          "notes": "Easy Run 4 miles"
+        },
+        {
+          "date": "2025-04-27",
+          "type": "Race",
+          "distance": 26.2,
+          "notes": "Marathon Race"
         }
       ]
     }
