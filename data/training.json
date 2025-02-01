@@ -1,212 +1,172 @@
 {
   "weeks": [
     {
-      "weekNumber": 45,
-      "startDate": "2023-11-04",
+      "weekNumber": 51,
+      "startDate": "2023-12-16",
       "stats": {
-        "totalDistance": 33.5,
-        "averagePace": "5:30",
-        "averageHR": 150,
-        "averagePower": 266,
-        "totalDuration": "3:57:43",
-        "totalRuns": 4,
-        "totalElevation": 392
+        "totalDistance": 29.5,
+        "averagePace": "6:08",
+        "averageHR": 142,
+        "averagePower": 262,
+        "totalDuration": "3:04:47",
+        "totalRuns": 3,
+        "totalElevation": 329
       },
       "runs": [
         {
-          "date": "2023-11-04",
-          "type": "Easy Run",
-          "distance": 5.1,
-          "duration": "36:38",
-          "heartRate": 151,
-          "power": 253,
-          "temperature": 17,
-          "vo2max": 47.6,
-          "trimp": 66
+          "date": "2023-12-24",
+          "type": "Christmas Eve Run",
+          "distance": 16.4,
+          "duration": "1:48:29",
+          "heartRate": 160,
+          "power": 285,
+          "temperature": 14,
+          "vo2max": 47.8,
+          "trimp": 233
         },
         {
-          "date": "2023-11-06",
+          "date": "2023-12-26",
           "type": "Easy Run",
-          "distance": 5.3,
-          "duration": "39:09",
-          "heartRate": 149,
-          "power": 253,
-          "temperature": 17,
-          "vo2max": 47.6,
-          "trimp": 86
+          "distance": 6.1,
+          "duration": "44:48",
+          "heartRate": 129,
+          "power": 247,
+          "temperature": 23,
+          "vo2max": 47.8,
+          "trimp": 92
         },
         {
-          "date": "2023-11-07",
+          "date": "2023-12-28",
+          "type": "Easy Run",
+          "distance": 7.0,
+          "duration": "51:31",
+          "heartRate": 137,
+          "power": 253,
+          "temperature": 17,
+          "vo2max": 47.8,
+          "trimp": 95
+        }
+      ]
+    },
+    {
+      "weekNumber": 52,
+      "startDate": "2023-12-23",
+      "stats": {
+        "totalDistance": 38.4,
+        "averagePace": "6:11",
+        "averageHR": 147,
+        "averagePower": 261,
+        "totalDuration": "4:35:34",
+        "totalRuns": 3,
+        "totalElevation": 486
+      },
+      "runs": [
+        {
+          "date": "2024-01-02",
           "type": "Long Run",
-          "distance": 10.0,
-          "duration": "1:10:48",
-          "heartRate": 148,
+          "distance": 21.1,
+          "duration": "2:33:12",
+          "heartRate": 142,
           "power": 263,
           "temperature": 15,
-          "vo2max": 47.2,
-          "trimp": 101
-        },
-        {
-          "date": "2023-11-08",
-          "type": "Hills",
-          "distance": 8.3,
-          "duration": "58:02",
-          "heartRate": 152,
-          "power": 283,
-          "temperature": 16,
-          "vo2max": 48.6,
-          "trimp": 104
-        }
-      ]
-    },
-    {
-      "weekNumber": 46,
-      "startDate": "2023-11-11",
-      "stats": {
-        "totalDistance": 40.8,
-        "averagePace": "5:45",
-        "averageHR": 145,
-        "averagePower": 262,
-        "totalDuration": "4:41:44",
-        "totalRuns": 5,
-        "totalElevation": 606
-      },
-      "runs": [
-        {
-          "date": "2023-11-11",
-          "type": "Progressive Run",
-          "distance": 10.1,
-          "duration": "1:11:15",
-          "heartRate": 152,
-          "power": 264,
-          "temperature": 18,
-          "vo2max": 48.4,
-          "trimp": 121
-        },
-        {
-          "date": "2023-11-11",
-          "type": "Easy Run",
-          "distance": 6.0,
-          "duration": "43:30",
-          "heartRate": 143,
-          "power": 253,
-          "temperature": 17,
-          "vo2max": 48.4,
-          "trimp": 97
-        },
-        {
-          "date": "2023-11-13",
-          "type": "Tempo Intervals",
-          "distance": 11.1,
-          "duration": "1:19:02",
-          "heartRate": 151,
-          "power": 261,
-          "temperature": 18,
-          "vo2max": 49.0,
-          "trimp": 131
-        },
-        {
-          "date": "2023-11-15",
-          "type": "Progressive Run",
-          "distance": 11.1,
-          "duration": "1:13:07",
-          "heartRate": 142,
-          "power": 281,
-          "temperature": 16,
           "vo2max": 47.8,
-          "trimp": 165
+          "trimp": 201
         },
         {
-          "date": "2023-11-15",
+          "date": "2024-01-04",
           "type": "Recovery Run",
-          "distance": 3.1,
-          "duration": "24:50",
-          "heartRate": 137,
-          "power": 251,
-          "temperature": 16,
-          "vo2max": 46.8,
-          "trimp": 92
+          "distance": 7.3,
+          "duration": "58:17",
+          "heartRate": 139,
+          "power": 231,
+          "temperature": 24,
+          "vo2max": 47.8,
+          "trimp": 85
+        },
+        {
+          "date": "2024-01-06",
+          "type": "Tempo Run",
+          "distance": 10.0,
+          "duration": "1:04:05",
+          "heartRate": 159,
+          "power": 290,
+          "temperature": 15,
+          "vo2max": 47.8,
+          "trimp": 140
         }
       ]
     },
     {
-      "weekNumber": 47,
-      "startDate": "2023-11-18",
+      "weekNumber": 1,
+      "startDate": "2024-01-01",
       "stats": {
-        "totalDistance": 47.2,
-        "averagePace": "5:55",
-        "averageHR": 144,
-        "averagePower": 261,
-        "totalDuration": "5:23:51",
-        "totalRuns": 6,
-        "totalElevation": 542
+        "totalDistance": 26.5,
+        "averagePace": "6:19",
+        "averageHR": 147,
+        "averagePower": 274,
+        "totalDuration": "2:59:25",
+        "totalRuns": 2,
+        "totalElevation": 271
       },
       "runs": [
         {
-          "date": "2023-11-20",
-          "type": "Easy Run",
-          "distance": 8.3,
-          "duration": "57:40",
-          "heartRate": 140,
-          "power": 264,
-          "temperature": 17,
-          "vo2max": 48.4,
-          "trimp": 86
-        },
-        {
-          "date": "2023-11-21",
-          "type": "Tempo Intervals",
-          "distance": 11.3,
-          "duration": "1:16:55",
-          "heartRate": 149,
-          "power": 262,
-          "temperature": 18,
-          "vo2max": 48.6,
-          "trimp": 127
-        },
-        {
-          "date": "2023-11-22",
-          "type": "Easy Run",
-          "distance": 5.1,
-          "duration": "36:30",
-          "heartRate": 140,
-          "power": 259,
-          "temperature": 17,
-          "vo2max": 47.2,
-          "trimp": 82
-        },
-        {
-          "date": "2023-11-24",
-          "type": "Hills",
-          "distance": 13.2,
-          "duration": "1:33:41",
-          "heartRate": 150,
-          "power": 274,
-          "temperature": 22,
-          "vo2max": 48.2,
-          "trimp": 138
-        },
-        {
-          "date": "2023-11-26",
-          "type": "Progressive Run",
-          "distance": 10.0,
-          "duration": "1:10:48",
+          "date": "2024-01-11",
+          "type": "Recovery Short Run",
+          "distance": 12.1,
+          "duration": "1:21:13",
           "heartRate": 148,
-          "power": 263,
-          "temperature": 20,
-          "vo2max": 47.2,
-          "trimp": 101
+          "power": 274,
+          "temperature": 25,
+          "vo2max": 47.7,
+          "trimp": 132
         },
         {
-          "date": "2023-11-26",
-          "type": "Recovery Run",
-          "distance": 3.1,
-          "duration": "24:50",
-          "heartRate": 137,
-          "power": 251,
-          "temperature": 20,
-          "vo2max": 46.8,
-          "trimp": 92
+          "date": "2024-01-13",
+          "type": "Recovery Short Run",
+          "distance": 14.4,
+          "duration": "1:38:12",
+          "heartRate": 146,
+          "power": 274,
+          "temperature": 24,
+          "vo2max": 47.8,
+          "trimp": 139
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "startDate": "2024-01-08",
+      "stats": {
+        "totalDistance": 31.1,
+        "averagePace": "6:21",
+        "averageHR": 148,
+        "averagePower": 262,
+        "totalDuration": "3:34:08",
+        "totalRuns": 2,
+        "totalElevation": 328
+      },
+      "runs": [
+        {
+          "date": "2024-01-15",
+          "type": "Easy Run",
+          "distance": 12.3,
+          "duration": "1:24:36",
+          "heartRate": 144,
+          "power": 272,
+          "temperature": 12,
+          "vo2max": 47.6,
+          "trimp": 123
+        },
+        {
+          "date": "2024-01-19",
+          "type": "Easy Run",
+          "distance": 7.0,
+          "duration": "40:23",
+          "heartRate": 147,
+          "power": 268,
+          "temperature": 27,
+          "vo2max": 47.1,
+          "trimp": 75
         }
       ]
     }
