@@ -59,7 +59,7 @@ async function initializeApp() {
     const appElement = document.getElementById('app');
     
     // Fetch data
-    const data = await fetchTrainingData();
+    const data = await window.fetchTrainingData();
     if (!data) {
         appElement.innerHTML = '<div class="loading">Error loading training data</div>';
         return;
