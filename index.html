@@ -7,24 +7,202 @@
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="referrer" content="no-referrer">
     <title>Training Log</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #F2F2F7;
+            --text-color: #1C1C1E;
+            --card-background: #FFFFFF;
         }
-        h1 {
-            color: #333;
-            font-size: 48px;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            background-color: var(--card-background);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.7rem;
             text-align: center;
+            font-weight: 600;
+        }
+
+        .week-container {
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            scroll-behavior: smooth;
+        }
+
+        .week {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            padding: 1rem;
+        }
+
+        .week-header {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .run-card {
+            background: var(--card-background);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .run-date {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .run-type {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .run-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 380px) {
+            .run-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Darren's Training Log</h1>
+    <div class="header">
+        <h1>Training Log</h1>
+    </div>
+    <div id="app">
+        <div class="loading">Loading training data...</div>
+    </div>
+
+    <script>
+        async function fetchTrainingData() {
+            try {
+                const response = await fetch('data/training.json');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading training data:', error);
+                return null;
+            }
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return `${days[date.getDay()]} • ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        function createWeekElement(week) {
+            const weekEl = document.createElement('div');
+            weekEl.className = 'week';
+            
+            const weekHeader = document.createElement('div');
+            weekHeader.className = 'week-header';
+            weekHeader.textContent = `Week ${week.weekNumber} • ${week.totalDistance}km`;
+            weekEl.appendChild(weekHeader);
+
+            week.runs.forEach(run => {
+                const runCard = document.createElement('div');
+                runCard.className = 'run-card';
+                
+                runCard.innerHTML = `
+                    <div class="run-date">${formatDate(run.date)}</div>
+                    <div class="run-type">${run.type}</div>
+                    <div class="run-stats">
+                        <div class="stat">
+                            <div class="stat-value">${run.distance}km</div>
+                            <div class="stat-label">Distance</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">${run.duration}</div>
+                            <div class="stat-label">Duration</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">${run.heartRate}</div>
+                            <div class="stat-label">Avg HR</div>
+                        </div>
+                    </div>
+                `;
+                
+                weekEl.appendChild(runCard);
+            });
+
+            return weekEl;
+        }
+
+        async function initializeApp() {
+            const data = await fetchTrainingData();
+            if (!data) {
+                document.getElementById('app').innerHTML = '<div class="loading">Error loading training data</div>';
+                return;
+            }
+
+            const weekContainer = document.createElement('div');
+            weekContainer.className = 'week-container';
+
+            data.weeks.forEach(week => {
+                weekContainer.appendChild(createWeekElement(week));
+            });
+
+            document.getElementById('app').innerHTML = '';
+            document.getElementById('app').appendChild(weekContainer);
+        }
+
+        // Initialize the app when the page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
 </body>
 </html>
