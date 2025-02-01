@@ -5,7 +5,6 @@ async function initializeApp() {
         return;
     }
 
-    // const weeksUntilRace = window.calculateWeeksUntilRace();
     const useKm = data.units === 'kilometers';
     const weekContainer = document.createElement('div');
     weekContainer.className = 'week-container';
@@ -32,43 +31,6 @@ async function initializeApp() {
     const currentWeekIndex = findCurrentWeekIndex(data.weeks);
     const weekWidth = window.innerWidth;
     weekContainer.scrollLeft = currentWeekIndex * weekWidth;
-
-    // Add scroll event listener to scroll to top when changing weeks
-    // let lastScrollLeft = weekContainer.scrollLeft;
-    // weekContainer.addEventListener('scroll', () => {
-    //     const currentScrollLeft = weekContainer.scrollLeft;
-    //     const weekWidth = window.innerWidth;
-        
-    //     // Check if we've scrolled to a new week
-    //     if (Math.abs(currentScrollLeft - lastScrollLeft) >= weekWidth / 2) {
-    //         window.scrollTo({ top: 0, behavior: 'smooth' });
-    //         lastScrollLeft = Math.round(currentScrollLeft / weekWidth) * weekWidth;
-    //     }
-    // });
-
-    // Add touch event listeners for smoother scrolling behavior
-    // let touchStartX = 0;
-    // let touchStartScroll = 0;
-
-    // weekContainer.addEventListener('touchstart', (e) => {
-    //     touchStartX = e.touches[0].clientX;
-    //     touchStartScroll = weekContainer.scrollLeft;
-    // });
-
-    // weekContainer.addEventListener('touchmove', (e) => {
-    //     const touchDelta = touchStartX - e.touches[0].clientX;
-    //     weekContainer.scrollLeft = touchStartScroll + touchDelta;
-    // });
-
-    // weekContainer.addEventListener('touchend', (e) => {
-    //     const weekWidth = window.innerWidth;
-    //     const currentWeek = Math.round(weekContainer.scrollLeft / weekWidth);
-
-    //     weekContainer.scrollTo({
-    //         left: currentWeek * weekWidth,
-    //         behavior: 'smooth'
-    //     });
-    // });
 }
 
 document.addEventListener('DOMContentLoaded', initializeApp);
