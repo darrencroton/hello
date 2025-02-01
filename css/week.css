@@ -1,0 +1,63 @@
+/* Week container */
+.week-container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    scroll-behavior: smooth;
+    flex-direction: row;
+}
+
+.week-container::-webkit-scrollbar {
+    display: none;
+}
+
+.week {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding: 1rem;
+}
+
+/* Week summary */
+.week-summary {
+    background-color: var(--card-background);
+    padding: 1.2rem;
+    margin: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.week-summary-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.week-progress {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.countdown {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.total-distance {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Week divider */
+.week-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1rem -1rem;
+}
