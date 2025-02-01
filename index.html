@@ -268,20 +268,30 @@
         function findCurrentWeekIndex(weeks) {
             const now = new Date();
             
-            // Find the week that contains the current date
+            // First, try to find the exact current week
             const currentWeekIndex = weeks.findIndex(week => {
-                const weekStartDate = new Date(week.runs[week.runs.length - 1].date);
-                const weekEndDate = new Date(week.runs[0].date);
-                
-                // Extend the week range by a day on each side to account for potential day variations
-                weekStartDate.setDate(weekStartDate.getDate() - 1);
-                weekEndDate.setDate(weekEndDate.getDate() + 1);
+                const weekRuns = week.runs;
+                const weekStartDate = new Date(weekRuns[weekRuns.length - 1].date);
+                const weekEndDate = new Date(weekRuns[0].date);
                 
                 return now >= weekStartDate && now <= weekEndDate;
             });
 
-            // If no current week found, default to the most recent week
-            return currentWeekIndex !== -1 ? currentWeekIndex : Math.max(0, weeks.length - 1);
+            // If an exact current week is found, return it
+            if (currentWeekIndex !== -1) {
+                return currentWeekIndex;
+            }
+
+            // If no exact current week, find the most recent week before current date
+            for (let i = 0; i < weeks.length; i++) {
+                const weekEndDate = new Date(weeks[i].runs[weeks[i].runs.length - 1].date);
+                if (weekEndDate <= now) {
+                    return i;
+                }
+            }
+
+            // If no week found (which should be rare), return the first week
+            return 0;
         }
 
         async function initializeApp() {
