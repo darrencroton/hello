@@ -1,0 +1,31 @@
+{
+  "weekNumber": 17,
+  "startDate": "2025-03-31",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2025-03-31",
+      "type": "Progression Run",
+      "distance": 22,
+      "notes": "Progression Run 22 miles, last 20 min. hard"
+    },
+    {
+      "date": "2025-04-02",
+      "type": "Threshold Run",
+      "distance": 8,
+      "notes": "Threshold Run 2 miles easy, 2 x 15 min. @ half-marathon/10K pace w/1-min. active recovery, 2 miles easy"
+    },
+    {
+      "date": "2025-04-03",
+      "type": "Easy Run",
+      "distance": 6,
+      "notes": "Easy Run 6 miles"
+    },
+    {
+      "date": "2025-04-04",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 4 miles + 8 x 10-sec hill sprint"
+    }
+  ]
+}

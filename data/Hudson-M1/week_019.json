@@ -1,0 +1,31 @@
+{
+  "weekNumber": 19,
+  "startDate": "2025-04-14",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2025-04-14",
+      "type": "Hard Long Run",
+      "distance": 16,
+      "notes": "Hard Long Run 2 miles easy, 14 miles @ marathon pace + 20 sec/mile, 2 miles easy"
+    },
+    {
+      "date": "2025-04-15",
+      "type": "Easy Run",
+      "distance": 5,
+      "notes": "Easy Run 5 miles"
+    },
+    {
+      "date": "2025-04-16",
+      "type": "Threshold Run",
+      "distance": 7,
+      "notes": "Threshold Run 2 miles easy, 2 x 10 min. @ half-marathon pace w/2-min. active recovery, 3 miles easy"
+    },
+    {
+      "date": "2025-04-18",
+      "type": "Easy Run",
+      "distance": 12,
+      "notes": "Easy Run 4 miles + 10 x 10-sec hill sprint"
+    }
+  ]
+}

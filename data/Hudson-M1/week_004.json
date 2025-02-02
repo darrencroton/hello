@@ -1,0 +1,31 @@
+{
+  "weekNumber": 4,
+  "startDate": "2024-12-30",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2024-12-30",
+      "type": "Progression Run",
+      "distance": 6,
+      "notes": "Progression Run 6 miles, last 10 min. moderate (uphill if possible)"
+    },
+    {
+      "date": "2025-01-01",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 5 miles + 3 x 8-sec hill sprint"
+    },
+    {
+      "date": "2025-01-02",
+      "type": "Fartlek Run",
+      "distance": 7,
+      "notes": "Fartlek Run 7 miles w/6 x 30 sec. @ 10K-3K pace"
+    },
+    {
+      "date": "2025-01-04",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 5 miles + 3 x 8-sec hill sprint"
+    }
+  ]
+}

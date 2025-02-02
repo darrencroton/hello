@@ -1,0 +1,37 @@
+{
+  "weekNumber": 11,
+  "startDate": "2025-02-17",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2025-02-17",
+      "type": "Progression Run",
+      "distance": 12,
+      "notes": "Progression Run 12 miles, last 30 min. hard"
+    },
+    {
+      "date": "2025-02-19",
+      "type": "Hill Repeats",
+      "distance": 6,
+      "notes": "Hill Repetitions 2 miles easy, 6 x 1 min. uphill @ 5K effort w/jog-back recoveries, 2 miles easy"
+    },
+    {
+      "date": "2025-02-20",
+      "type": "Easy Run",
+      "distance": 10,
+      "notes": "Easy Run 10 miles"
+    },
+    {
+      "date": "2025-02-21",
+      "type": "Easy Run",
+      "distance": 5,
+      "notes": "Easy Run 5 miles"
+    },
+    {
+      "date": "2025-02-22",
+      "type": "Threshold Run",
+      "distance": 8,
+      "notes": "Threshold Run 2 miles easy, 6 miles @ half-marathon pace, 2 miles easy"
+    }
+  ]
+}

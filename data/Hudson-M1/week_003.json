@@ -1,0 +1,31 @@
+{
+  "weekNumber": 3,
+  "startDate": "2024-12-23",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2024-12-23",
+      "type": "Progression Run",
+      "distance": 5,
+      "notes": "Progression Run 5 miles, last 10 min. moderate"
+    },
+    {
+      "date": "2024-12-25",
+      "type": "Easy Run",
+      "distance": 6,
+      "notes": "Easy Run 4 miles + 2 x 8-sec hill sprint"
+    },
+    {
+      "date": "2024-12-26",
+      "type": "Easy Run",
+      "distance": 6,
+      "notes": "Easy Run 6 miles"
+    },
+    {
+      "date": "2024-12-28",
+      "type": "Easy Run",
+      "distance": 7,
+      "notes": "Easy Run 5 miles + 2 x 8-sec hill sprint"
+    }
+  ]
+}

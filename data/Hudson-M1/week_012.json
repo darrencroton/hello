@@ -1,0 +1,37 @@
+{
+  "weekNumber": 12,
+  "startDate": "2025-02-24",
+  "stats": {},
+  "runs": [
+    {
+      "date": "2025-02-24",
+      "type": "Long Run",
+      "distance": 14,
+      "notes": "Long Run 14 miles easy"
+    },
+    {
+      "date": "2025-02-26",
+      "type": "Intervals",
+      "distance": 6,
+      "notes": "Specific-Endurance Intervals: 2 miles easy, 8 x 800m @ 10K pace w/2-min. active recoveries, 2 miles easy"
+    },
+    {
+      "date": "2025-02-27",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8 miles"
+    },
+    {
+      "date": "2025-02-28",
+      "type": "Easy Run",
+      "distance": 13,
+      "notes": "Easy Run 5 miles + 8 x 8-sec hill sprint"
+    },
+    {
+      "date": "2025-03-01",
+      "type": "Threshold Run",
+      "distance": 6,
+      "notes": "Threshold Run 2 miles easy, 2 x 15 min. @ half-marathon/10K pace w/3-min. active recovery, 2 miles easy"
+    }
+  ]
+}
