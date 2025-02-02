@@ -6,12 +6,28 @@ const config = {
 
 // Load and parse a week file
 async function loadWeekFile(weekNum) {
-    const response = await fetch(`${config.dataDir}week${weekNum}.json`);
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        const response = await fetch(`${config.dataDir}week${weekNum}.json`);
+        if (!response.ok) {
+            console.warn(`Week ${weekNum} data not found`);
+            return {
+                weekNum,
+                kmRun: 0,
+                timeRun: 0,
+                elevation: 0
+            };
+        }
+        const data = await response.json();
+        return { weekNum, ...data };
+    } catch (error) {
+        console.error(`Error loading week ${weekNum}:`, error);
+        return {
+            weekNum,
+            kmRun: 0,
+            timeRun: 0,
+            elevation: 0
+        };
     }
-    const data = await response.json();
-    return { weekNum, ...data };
 }
 
 // Get sorted list of available week numbers
