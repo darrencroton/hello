@@ -1,3 +1,18 @@
+.week-container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    scroll-behavior: smooth;
+    flex-direction: row;
+}
+
+.week {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding: 1rem;
+}
+
 .week-summary {
     background-color: var(--card-background);
     padding: 1.2rem;
@@ -32,4 +47,14 @@
     color: var(--text-color);
     font-size: 1.3rem;
     font-weight: 500;
+}
+
+.week-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1rem -1rem;
+}
+
+.week-container::-webkit-scrollbar {
+    display: none;
 }
