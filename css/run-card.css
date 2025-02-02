@@ -49,9 +49,3 @@
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
-
-.week-divider {
-    height: 1px;
-    background-color: var(--border-color);
-    margin: 1rem -1rem;
-}
