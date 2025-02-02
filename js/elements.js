@@ -32,7 +32,7 @@ function createDayElement(day, useKm) {
         <div class="run-type">${day.type}</div>
         ${distance > 0 ? `
             <div class="stat">
-                <div class="stat-value">${distance}km</div>
+                <div class="stat-value">${distance} km</div>
                 <div class="stat-label">Distance</div>
             </div>
         ` : ''}
