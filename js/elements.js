@@ -88,10 +88,14 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     topButton.className = 'top-button';
     topButton.textContent = 'Top';
     topButton.addEventListener('click', () => {
-        weekEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => {
-            window.scrollBy({ top: -75, behavior: 'smooth' }); // Add offset for header
-        }, 100); // Small delay to ensure main scroll completes
+        const headerHeight = document.querySelector('.header').offsetHeight + 
+                           document.querySelector('.nav-container').offsetHeight;
+        
+        const weekTop = weekEl.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: weekTop - headerHeight,
+            behavior: 'smooth'
+        });
     });
     weekEl.appendChild(topButton);
 
