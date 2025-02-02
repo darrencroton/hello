@@ -1,13 +1,14 @@
 import { formatDate, getDateRange, getMondayOfWeek } from './dateUtils.js';
-import { convertToKm } from './utils.js';
+import { formatDistance } from './units.js';
+import { CLASSES, RUN_TYPES } from './constants.js';
 
 function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
-    const actualRuns = week.runs.filter(run => run.type !== 'Rest');
+    const actualRuns = week.runs.filter(run => run.type !== RUN_TYPES.REST);
     const totalDistance = actualRuns.reduce((sum, run) => sum + run.distance, 0);
-    const distance = useKm ? totalDistance : convertToKm(totalDistance);
+    const distance = formatDistance(totalDistance, useKm);
 
     const summaryEl = document.createElement('div');
-    summaryEl.className = 'week-summary';
+    summaryEl.className = CLASSES.WEEK_SUMMARY;
 
     const weeksUntilRace = totalWeeks - weekNumber;
 
@@ -23,9 +24,9 @@ function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
 
 function createDayElement(day, useKm) {
     const dayEl = document.createElement('div');
-    dayEl.className = 'run-card' + (day.type === 'Rest' ? ' rest-day' : '');
+    dayEl.className = CLASSES.RUN_CARD + (day.type === RUN_TYPES.REST ? ` ${CLASSES.REST_DAY}` : '');
     
-    const distance = day.distance ? (useKm ? day.distance : convertToKm(day.distance)) : 0;
+    const distance = day.distance ? formatDistance(day.distance, useKm) : 0;
     dayEl.innerHTML = `
         <div class="run-date">${formatDate(day.date)}</div>
         <div class="run-type">${day.type}</div>
@@ -43,11 +44,11 @@ function createDayElement(day, useKm) {
 
 function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
     const weekEl = document.createElement('div');
-    weekEl.className = 'week';
+    weekEl.className = CLASSES.WEEK;
     
     weekEl.appendChild(createWeekSummary(week, weekNumber, totalWeeks, useKm));
 
-    // Get Monday of the week and create array of all days
+    // Get all days in the week
     const dates = week.runs.map(run => new Date(run.date));
     const monday = getMondayOfWeek(Math.min(...dates.map(d => d.getTime())));
 
@@ -66,7 +67,7 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         } else {
             allDays.push({
                 date: dateStr,
-                type: 'Rest',
+                type: RUN_TYPES.REST,
                 distance: 0,
                 notes: ''
             });
@@ -78,7 +79,7 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         
         if (index < allDays.length - 1) {
             const divider = document.createElement('div');
-            divider.className = 'week-divider';
+            divider.className = CLASSES.WEEK_DIVIDER;
             weekEl.appendChild(divider);
         }
     });
