@@ -31,9 +31,9 @@ async function initializeApp() {
 
     const totalWeeks = data.weeks.length;
 
-    data.weeks.forEach((week, index) => {
-        const weekNumber = index + 1; // Week numbers now go from 1 to totalWeeks
-        weekContainer.appendChild(createWeekElement(week, weekNumber, totalWeeks, useKm));
+    data.weeks.forEach((week) => {
+        // Use the weekNumber from the data file itself
+        weekContainer.appendChild(createWeekElement(week, week.weekNumber, totalWeeks, useKm));
     });
 
     document.getElementById('app').innerHTML = '';
