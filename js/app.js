@@ -17,10 +17,9 @@ class TrainingApp {
     }
 
     scrollToWeek(weekIndex) {
-        // Add bounds checking
-        if (weekIndex < 0 || weekIndex >= this.totalWeeks) {
-            return;
-        }
+        // Enforce boundaries
+        weekIndex = Math.max(0, Math.min(weekIndex, this.totalWeeks - 1));
+        
         const weekWidth = window.innerWidth;
         this.weekContainer.scrollTo({
             left: weekIndex * weekWidth,
@@ -33,6 +32,8 @@ class TrainingApp {
         document.getElementById(IDS.PREV_WEEK).addEventListener('click', () => {
             if (this.currentWeekIndex > 0) {
                 this.scrollToWeek(this.currentWeekIndex - 1);
+            } else {
+                this.scrollToWeek(this.currentWeekIndex);
             }
         });
 
@@ -43,6 +44,8 @@ class TrainingApp {
         document.getElementById(IDS.NEXT_WEEK).addEventListener('click', () => {
             if (this.currentWeekIndex < this.totalWeeks - 1) {
                 this.scrollToWeek(this.currentWeekIndex + 1);
+            } else {
+                this.scrollToWeek(this.currentWeekIndex);
             }
         });
     }
