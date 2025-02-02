@@ -2,6 +2,7 @@ import { updateDistanceChart } from './charts/distanceChart.js';
 import { updateTimeChart } from './charts/timeChart.js';
 import { updateElevationChart } from './charts/elevationChart.js';
 import { updatePaceChart } from './charts/paceChart.js';
+import { formatTime } from './utils/formatUtils.js';
 
 // Configuration
 const config = {
@@ -82,20 +83,6 @@ function displayWeeklyData(weeklyData) {
         
         tableBody.appendChild(row);
     });
-}
-
-// Format seconds into HH:MM:SS
-function formatTime(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-    
-    return `${padZero(hours)}:${padZero(minutes)}:${padZero(remainingSeconds)}`;
-}
-
-// Pad numbers with leading zero if needed
-function padZero(num) {
-    return num.toString().padStart(2, '0');
 }
 
 // Update all charts with new data
