@@ -6,18 +6,14 @@ import { CLASSES, IDS } from './constants.js';
 class TrainingApp {
     constructor() {
         this.currentWeekIndex = 0;
+        this.todayWeekIndex = 0;
         this.totalWeeks = 0;
         this.headerHeight = 0;
         this.useKm = true;
         this.weekContainer = null;
-        this.weeks = null;
         
         // Cache DOM elements that we'll use repeatedly
         this.appElement = document.getElementById(IDS.APP);
-    }
-
-    getCurrentWeekIndex() {
-        return findCurrentWeekIndex(this.weeks);
     }
 
     scrollToWeek(weekIndex) {
@@ -37,7 +33,7 @@ class TrainingApp {
         });
 
         document.getElementById(IDS.TODAY_WEEK).addEventListener('click', () => {
-            this.scrollToWeek(this.getCurrentWeekIndex());
+            this.scrollToWeek(this.todayWeekIndex);
         });
 
         document.getElementById(IDS.NEXT_WEEK).addEventListener('click', () => {
@@ -53,9 +49,6 @@ class TrainingApp {
             this.appElement.innerHTML = `<div class="${CLASSES.LOADING}">Error loading training data</div>`;
             return;
         }
-
-        // Store weeks data
-        this.weeks = data.weeks;
 
         // Update page title with race name
         document.querySelector('.header h1').textContent = data.racename;
@@ -96,7 +89,8 @@ class TrainingApp {
 
         // Setup navigation and scroll to current week
         this.setupNavigation();
-        this.currentWeekIndex = findCurrentWeekIndex(data.weeks);
+        this.todayWeekIndex = findCurrentWeekIndex(data.weeks);
+        this.currentWeekIndex = this.todayWeekIndex;
         this.scrollToWeek(this.currentWeekIndex);
     }
 }
