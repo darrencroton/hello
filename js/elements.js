@@ -48,9 +48,8 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
     
     weekEl.appendChild(createWeekSummary(week, weekNumber, totalWeeks, useKm));
 
-    // Get all days in the week
-    const dates = week.runs.map(run => new Date(run.date));
-    const monday = getMondayOfWeek(Math.min(...dates.map(d => d.getTime())));
+    // Get monday from the week's start date
+    const monday = new Date(week.startDate);
 
     // Create an array of all days in the week
     const allDays = [];
