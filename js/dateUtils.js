@@ -27,8 +27,7 @@ function formatDate(dateStr) {
 }
 
 function getDateRange(week) {
-    const dates = week.runs.map(run => new Date(run.date));
-    const monday = getMondayOfWeek(Math.min(...dates.map(d => d.getTime())));
+    const monday = new Date(week.startDate);
     const sunday = getSundayOfWeek(monday);
     
     if (monday.getMonth() === sunday.getMonth()) {
@@ -43,10 +42,7 @@ function findCurrentWeekIndex(weeks) {
     
     // First try to find the current week
     for (let i = 0; i < weeks.length; i++) {
-        const weekDates = weeks[i].runs.map(run => new Date(run.date));
-        if (weekDates.length === 0) continue;
-        
-        const monday = getMondayOfWeek(Math.min(...weekDates.map(d => d.getTime())));
+        const monday = new Date(weeks[i].startDate);
         const sunday = getSundayOfWeek(monday);
         sunday.setHours(23, 59, 59, 999);
         
@@ -57,10 +53,7 @@ function findCurrentWeekIndex(weeks) {
     
     // If no current week found, find the closest future week
     for (let i = 0; i < weeks.length; i++) {
-        const weekDates = weeks[i].runs.map(run => new Date(run.date));
-        if (weekDates.length === 0) continue;
-        
-        const monday = getMondayOfWeek(Math.min(...weekDates.map(d => d.getTime())));
+        const monday = new Date(weeks[i].startDate);
         if (monday > now) {
             return i;
         }
