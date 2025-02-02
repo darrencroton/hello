@@ -83,14 +83,21 @@ window.findCurrentWeekIndex = function(weeks) {
     // First try to find the current week
     for (let i = 0; i < weeks.length; i++) {
         const weekDates = weeks[i].runs.map(run => new Date(run.date));
-        const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
+        if (weekDates.length === 0) continue;  // Skip empty weeks
+        
+        // Find Monday of the week (might be before first run)
+        const firstRunDate = new Date(Math.min(...weekDates.map(d => d.getTime())));
+        const monday = new Date(firstRunDate);
         while (monday.getDay() !== 1) {
             monday.setDate(monday.getDate() - 1);
         }
         
+        // Calculate Sunday from Monday
         const sunday = new Date(monday);
         sunday.setDate(monday.getDate() + 6);
+        sunday.setHours(23, 59, 59, 999);  // End of Sunday
         
+        // Check if current date falls within this week
         if (now >= monday && now <= sunday) {
             return i;
         }
@@ -99,7 +106,11 @@ window.findCurrentWeekIndex = function(weeks) {
     // If no current week found, find the closest future week
     for (let i = 0; i < weeks.length; i++) {
         const weekDates = weeks[i].runs.map(run => new Date(run.date));
+        if (weekDates.length === 0) continue;
         const monday = new Date(Math.min(...weekDates.map(d => d.getTime())));
+        while (monday.getDay() !== 1) {
+            monday.setDate(monday.getDate() - 1);
+        }
         if (monday > now) {
             return i;
         }
