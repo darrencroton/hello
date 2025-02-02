@@ -1,5 +1,7 @@
 import { updateDistanceChart } from './charts/distanceChart.js';
 import { updateTimeChart } from './charts/timeChart.js';
+import { updateElevationChart } from './charts/elevationChart.js';
+import { updatePaceChart } from './charts/paceChart.js';
 
 // Configuration
 const config = {
@@ -100,7 +102,8 @@ function padZero(num) {
 function updateCharts(weeklyData) {
     updateDistanceChart(weeklyData);
     updateTimeChart(weeklyData);
-    // TODO: Add back elevation and pace charts
+    updateElevationChart(weeklyData);
+    updatePaceChart(weeklyData);
 }
 
 // Initialize when document is loaded
