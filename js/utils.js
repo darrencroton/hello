@@ -118,3 +118,39 @@ window.findCurrentWeekIndex = function(weeks) {
     
     return 0;
 }
+
+// Navigation functions
+window.scrollToCurrentWeek = function() {
+    const currentWeek = document.querySelector('.week.current-week');
+    if (currentWeek) {
+        currentWeek.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+window.scrollToPrevWeek = function() {
+    const weeks = Array.from(document.querySelectorAll('.week'));
+    const currentWeekIndex = weeks.findIndex(week => {
+        const rect = week.getBoundingClientRect();
+        return rect.top > -rect.height / 2;
+    });
+    
+    if (currentWeekIndex > 0) {
+        weeks[currentWeekIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+window.scrollToNextWeek = function() {
+    const weeks = Array.from(document.querySelectorAll('.week'));
+    const currentWeekIndex = weeks.findIndex(week => {
+        const rect = week.getBoundingClientRect();
+        return rect.top > -rect.height / 2;
+    });
+    
+    if (currentWeekIndex < weeks.length - 1) {
+        weeks[currentWeekIndex + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+window.scrollToTop = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
