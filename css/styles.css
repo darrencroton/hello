@@ -49,102 +49,11 @@
     background: #dee2e6;
 }
 
-/* Existing styles */
 .loading {
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
     color: #666;
-}
-
-.week-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-}
-
-.week {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.week-summary {
-    background: #e9ecef;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.week-summary-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.week-progress {
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.week-countdown {
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.total-distance {
-    color: #666;
-}
-
-.run-card {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.rest-day {
-    background: #f8f9fa;
-    box-shadow: none;
-}
-
-.run-date {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.run-type {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.stat {
-    display: inline-block;
-    text-align: center;
-    margin-right: 20px;
-}
-
-.stat-value {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.stat-label {
-    color: #666;
-    font-size: 0.9em;
-}
-
-.run-notes {
-    margin-top: 10px;
-    color: #666;
-    font-size: 0.9em;
-}
-
-.week-divider {
-    height: 10px;
 }
 
 .header {
