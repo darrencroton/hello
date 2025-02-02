@@ -15,8 +15,8 @@ function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
     summaryEl.innerHTML = `
         <div class="week-summary-title">Week ${weekNumber} of ${totalWeeks}</div>
         <div class="week-dates">${getDateRange(week)}</div>
-        <div class="total-distance">Weekly distance: ${distance} km</div>
         <div class="week-countdown">${weeksUntilRace} week(s) until race day</div>
+        <div class="total-distance">Weekly distance: ${distance} km</div>
     `;
 
     return summaryEl;
