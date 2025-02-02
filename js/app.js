@@ -5,6 +5,9 @@ async function initializeApp() {
         return;
     }
 
+    // Update page title with race name
+    document.querySelector('.header h1').textContent = data.racename;
+
     const useKm = data.units === 'kilometers';
     
     // Create main container
