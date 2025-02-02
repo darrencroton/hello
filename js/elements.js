@@ -83,5 +83,14 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
         }
     });
 
+    // Add Top button
+    const topButton = document.createElement('button');
+    topButton.className = 'top-button';
+    topButton.textContent = 'Top';
+    topButton.addEventListener('click', () => {
+        weekEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    weekEl.appendChild(topButton);
+
     return weekEl;
 }
