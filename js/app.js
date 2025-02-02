@@ -17,7 +17,6 @@ class TrainingApp {
     }
 
     scrollToWeek(weekIndex) {
-        // Enforce boundaries
         weekIndex = Math.max(0, Math.min(weekIndex, this.totalWeeks - 1));
         
         const weekWidth = window.innerWidth;
@@ -29,24 +28,8 @@ class TrainingApp {
     }
 
     setupNavigation() {
-        document.getElementById(IDS.PREV_WEEK).addEventListener('click', () => {
-            if (this.currentWeekIndex > 0) {
-                this.scrollToWeek(this.currentWeekIndex - 1);
-            } else {
-                this.scrollToWeek(this.currentWeekIndex);
-            }
-        });
-
         document.getElementById(IDS.TODAY_WEEK).addEventListener('click', () => {
             this.scrollToWeek(this.todayWeekIndex);
-        });
-
-        document.getElementById(IDS.NEXT_WEEK).addEventListener('click', () => {
-            if (this.currentWeekIndex < this.totalWeeks - 1) {
-                this.scrollToWeek(this.currentWeekIndex + 1);
-            } else {
-                this.scrollToWeek(this.currentWeekIndex);
-            }
         });
     }
 
@@ -69,13 +52,11 @@ class TrainingApp {
         const mainContainer = document.createElement('div');
         mainContainer.id = IDS.MAIN_CONTAINER;
         
-        // Create navigation buttons
+        // Create navigation button
         const navContainer = document.createElement('div');
         navContainer.className = CLASSES.NAV_CONTAINER;
         navContainer.innerHTML = `
-            <button id="${IDS.PREV_WEEK}" class="${CLASSES.NAV_BUTTON}">Previous</button>
             <button id="${IDS.TODAY_WEEK}" class="${CLASSES.NAV_BUTTON}">Today</button>
-            <button id="${IDS.NEXT_WEEK}" class="${CLASSES.NAV_BUTTON}">Next</button>
         `;
         mainContainer.appendChild(navContainer);
         
