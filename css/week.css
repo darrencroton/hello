@@ -10,7 +10,7 @@
 .week-summary-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--title-color);
     margin-bottom: 0.8rem;
 }
 
