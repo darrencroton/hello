@@ -27,12 +27,12 @@ window.fetchTrainingData = async function() {
         // Get all week files
         const weeks = await window.getWeekFiles();
         
-        // Combine data
+        // Combine data - sort oldest to newest for proper display order
         return {
             racename: metadata.racename,
             raceday: metadata.raceday,
             units: metadata.units,
-            weeks: weeks.sort((a, b) => b.weekNumber - a.weekNumber) // Sort in reverse order
+            weeks: weeks.sort((a, b) => a.weekNumber - b.weekNumber)
         };
     } catch (error) {
         console.error('Error loading training data:', error);
