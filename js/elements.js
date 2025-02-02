@@ -1,4 +1,7 @@
-window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
+import { formatDate, getDateRange, getMondayOfWeek } from './dateUtils.js';
+import { convertToKm } from './utils.js';
+
+function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
     const actualRuns = week.runs.filter(run => run.type !== 'Rest');
     const totalDistance = actualRuns.reduce((sum, run) => sum + run.distance, 0);
     const distance = useKm ? totalDistance : convertToKm(totalDistance);
@@ -6,7 +9,7 @@ window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
     const summaryEl = document.createElement('div');
     summaryEl.className = 'week-summary';
 
-    const weeksUntilRace = totalWeeks - weekNumber;  // Changed to count up from start
+    const weeksUntilRace = totalWeeks - weekNumber;
 
     summaryEl.innerHTML = `
         <div class="week-summary-title">Week ${weekNumber} of ${totalWeeks}</div>
@@ -18,7 +21,7 @@ window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
     return summaryEl;
 }
 
-window.createDayElement = function(day, useKm) {
+function createDayElement(day, useKm) {
     const dayEl = document.createElement('div');
     dayEl.className = 'run-card' + (day.type === 'Rest' ? ' rest-day' : '');
     
@@ -38,18 +41,15 @@ window.createDayElement = function(day, useKm) {
     return dayEl;
 }
 
-window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
+function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
     const weekEl = document.createElement('div');
     weekEl.className = 'week';
     
     weekEl.appendChild(createWeekSummary(week, weekNumber, totalWeeks, useKm));
 
-    // Get all days in the week
+    // Get Monday of the week and create array of all days
     const dates = week.runs.map(run => new Date(run.date));
-    const monday = new Date(Math.min(...dates.map(d => d.getTime())));
-    while (monday.getDay() !== 1) {
-        monday.setDate(monday.getDate() - 1);
-    }
+    const monday = getMondayOfWeek(Math.min(...dates.map(d => d.getTime())));
 
     // Create an array of all days in the week
     const allDays = [];
@@ -88,9 +88,6 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     topButton.className = 'top-button';
     topButton.textContent = 'Top';
     topButton.addEventListener('click', () => {
-        const headerHeight = document.querySelector('.header').offsetHeight + 
-                           document.querySelector('.nav-container').offsetHeight;
-        
         const weekTop = weekEl.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
             top: weekTop - headerHeight,
@@ -101,3 +98,7 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
 
     return weekEl;
 }
+
+export {
+    createWeekElement
+};
