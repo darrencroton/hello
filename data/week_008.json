@@ -1,10 +1,7 @@
 {
   "weekNumber": 8,
   "startDate": "2025-01-27",
-  "stats": {
-    "totalDistance": 36,
-    "totalRuns": 5
-  },
+  "stats": {},
   "runs": [
     {
       "date": "2025-01-27",
