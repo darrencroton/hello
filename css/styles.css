@@ -38,7 +38,7 @@
     transition: background-color 0.2s;
     margin: 20px auto 0;
     display: block;
-    width: 100px;
+    width: 100%;
 }
 
 .top-button:hover {
