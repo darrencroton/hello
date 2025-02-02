@@ -17,6 +17,10 @@ class TrainingApp {
     }
 
     scrollToWeek(weekIndex) {
+        // Add bounds checking
+        if (weekIndex < 0 || weekIndex >= this.totalWeeks) {
+            return;
+        }
         const weekWidth = window.innerWidth;
         this.weekContainer.scrollTo({
             left: weekIndex * weekWidth,
