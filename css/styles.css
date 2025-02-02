@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background: white;
+    background: var(--card-background);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -12,8 +12,8 @@
 .nav-button {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    background: var(--card-background);
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
@@ -21,17 +21,17 @@
 }
 
 .nav-button:hover {
-    background: #e9ecef;
+    background: var(--highlight-background);
 }
 
 .nav-button:active {
-    background: #dee2e6;
+    background: var(--border-color);
 }
 
 .top-button {
     padding: 10px;
-    border: 1px solid #ccc;
-    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    background: var(--card-background);
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
@@ -42,29 +42,29 @@
 }
 
 .top-button:hover {
-    background: #e9ecef;
+    background: var(--highlight-background);
 }
 
 .top-button:active {
-    background: #dee2e6;
+    background: var(--border-color);
 }
 
 .loading {
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
-    color: #666;
+    color: var(--secondary-text);
 }
 
 .header {
-    background: #f8f9fa;
+    background: var(--card-background);
     padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header h1 {
     margin: 0;
     font-size: 1.5em;
-    color: #212529;
+    color: var(--text-color);
 }
