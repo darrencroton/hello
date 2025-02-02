@@ -1,0 +1,40 @@
+{
+  "weekNumber": 20,
+  "startDate": "2025-04-21",
+  "stats": {
+    "totalDistance": 25,
+    "totalRuns": 4
+  },
+  "runs": [
+    {
+      "date": "2025-04-21",
+      "type": "Hard Long Run",
+      "distance": 10,
+      "notes": "Hard Long Run 10 miles @ marathon pace + 20 sec/mile"
+    },
+    {
+      "date": "2025-04-23",
+      "type": "Marathon-Pace Run",
+      "distance": 7,
+      "notes": "Marathon-Pace Run 2 miles easy, 4 miles @ marathon pace, 1 mile easy"
+    },
+    {
+      "date": "2025-04-25",
+      "type": "Easy Run",
+      "distance": 4,
+      "notes": "Easy Run 4 miles"
+    },
+    {
+      "date": "2025-04-26",
+      "type": "Easy Run",
+      "distance": 4,
+      "notes": "Easy Run 4 miles"
+    },
+    {
+      "date": "2025-04-27",
+      "type": "Race",
+      "distance": 26.2,
+      "notes": "Marathon Race"
+    }
+  ]
+}

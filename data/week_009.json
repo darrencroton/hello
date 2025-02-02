@@ -1,0 +1,40 @@
+{
+  "weekNumber": 9,
+  "startDate": "2025-02-03",
+  "stats": {
+    "totalDistance": 38,
+    "totalRuns": 5
+  },
+  "runs": [
+    {
+      "date": "2025-02-03",
+      "type": "Fartlek Run",
+      "distance": 10,
+      "notes": "Fartlek Run + Progression: 3 miles easy, 3 miles: 1 min. @ 10K pace/1 min. easy, 2 miles easy, 2 miles hard"
+    },
+    {
+      "date": "2025-02-05",
+      "type": "Threshold Run",
+      "distance": 7,
+      "notes": "Threshold Run 2 miles easy, 2 x 10 min. @ half-marathon pace w/2-min. active recovery, 3 miles easy"
+    },
+    {
+      "date": "2025-02-06",
+      "type": "Easy Run",
+      "distance": 9,
+      "notes": "Easy Run 9 miles"
+    },
+    {
+      "date": "2025-02-07",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 4 miles + 8 x 8-sec hill sprint"
+    },
+    {
+      "date": "2025-02-08",
+      "type": "Progression Run",
+      "distance": 4,
+      "notes": "Progression Run 10 miles, last 20 min. moderate"
+    }
+  ]
+}

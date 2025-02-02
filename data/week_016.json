@@ -1,0 +1,34 @@
+{
+  "weekNumber": 16,
+  "startDate": "2025-03-24",
+  "stats": {
+    "totalDistance": 42,
+    "totalRuns": 4
+  },
+  "runs": [
+    {
+      "date": "2025-03-24",
+      "type": "Hard Long Run",
+      "distance": 14,
+      "notes": "Hard Long Run 14 miles @ marathon pace + 20 sec/mile"
+    },
+    {
+      "date": "2025-03-26",
+      "type": "Intervals",
+      "distance": 8,
+      "notes": "Ladder Intervals: 2 miles easy, 1-2-3-2-1 min. @ 5K-10K pace w/= duration active recoveries, 2 miles easy"
+    },
+    {
+      "date": "2025-03-27",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8 miles"
+    },
+    {
+      "date": "2025-03-28",
+      "type": "Easy Run",
+      "distance": 12,
+      "notes": "Easy Run 4 miles + 8 x 10-sec hill sprint"
+    }
+  ]
+}

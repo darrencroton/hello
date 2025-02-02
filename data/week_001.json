@@ -1,0 +1,34 @@
+{
+  "weekNumber": 1,
+  "startDate": "2024-12-09",
+  "stats": {
+    "totalDistance": 19,
+    "totalRuns": 4
+  },
+  "runs": [
+    {
+      "date": "2024-12-09",
+      "type": "Long Run",
+      "distance": 3,
+      "notes": "Long Run 3 miles easy"
+    },
+    {
+      "date": "2024-12-11",
+      "type": "Easy Run",
+      "distance": 4,
+      "notes": "Easy Run 3 miles + 1 x 8-sec hill sprint"
+    },
+    {
+      "date": "2024-12-12",
+      "type": "Easy Run",
+      "distance": 6,
+      "notes": "Easy Run 6 miles"
+    },
+    {
+      "date": "2024-12-14",
+      "type": "Easy Run",
+      "distance": 4,
+      "notes": "Easy Run 3 miles + 1 x 8-sec hill sprint"
+    }
+  ]
+}
