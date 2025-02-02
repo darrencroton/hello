@@ -29,7 +29,5 @@ export const CLASSES = {
 export const IDS = {
     APP: 'app',
     MAIN_CONTAINER: 'main-container',
-    PREV_WEEK: 'prevWeek',
-    TODAY_WEEK: 'todayWeek',
-    NEXT_WEEK: 'nextWeek'
+    TODAY_WEEK: 'todayWeek'
 };
