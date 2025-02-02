@@ -38,9 +38,43 @@ window.createDayElement = function(day, useKm) {
     return dayEl;
 }
 
+window.createNavigationButtons = function(isTop) {
+    const navEl = document.createElement('div');
+    navEl.className = 'week-navigation';
+
+    const prevButton = document.createElement('button');
+    prevButton.className = 'nav-button';
+    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i> Previous';
+    prevButton.onclick = () => window.scrollToPrevWeek();
+
+    const middleButton = document.createElement('button');
+    middleButton.className = 'nav-button';
+    if (isTop) {
+        middleButton.innerHTML = 'Today';
+        middleButton.onclick = () => window.scrollToCurrentWeek();
+    } else {
+        middleButton.innerHTML = '<i class="fas fa-chevron-up"></i> Top';
+        middleButton.onclick = () => window.scrollToTop();
+    }
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'nav-button';
+    nextButton.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
+    nextButton.onclick = () => window.scrollToNextWeek();
+
+    navEl.appendChild(prevButton);
+    navEl.appendChild(middleButton);
+    navEl.appendChild(nextButton);
+
+    return navEl;
+}
+
 window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     const weekEl = document.createElement('div');
     weekEl.className = 'week';
+    
+    // Add top navigation buttons
+    weekEl.appendChild(createNavigationButtons(true));
     
     weekEl.appendChild(createWeekSummary(week, weekNumber, totalWeeks, useKm));
 
@@ -82,6 +116,9 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
             weekEl.appendChild(divider);
         }
     });
+
+    // Add bottom navigation buttons
+    weekEl.appendChild(createNavigationButtons(false));
 
     return weekEl;
 }
