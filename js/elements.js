@@ -9,9 +9,9 @@ window.createWeekSummary = function(week, weekNumber, totalWeeks, useKm) {
     const weeksUntilRace = totalWeeks - weekNumber;  // Changed to count up from start
 
     summaryEl.innerHTML = `
-        <div class="week-summary-title">${getDateRange(week)}</div>
-        <div class="week-progress">Week ${weekNumber} of ${totalWeeks}</div>
+        <div class="week-summary-title">Week ${weekNumber} of ${totalWeeks}</div>
         <div class="week-countdown">${weeksUntilRace} week(s) until race day</div>
+        <div class="week-dates">${getDateRange(week)}</div>
         <div class="total-distance">Weekly distance: ${distance}km</div>
     `;
 
