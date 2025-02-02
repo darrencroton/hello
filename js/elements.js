@@ -89,6 +89,9 @@ window.createWeekElement = function(week, weekNumber, totalWeeks, useKm) {
     topButton.textContent = 'Top';
     topButton.addEventListener('click', () => {
         weekEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+            window.scrollBy({ top: -75, behavior: 'smooth' }); // Add offset for header
+        }, 100); // Small delay to ensure main scroll completes
     });
     weekEl.appendChild(topButton);
 
