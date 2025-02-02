@@ -1,31 +1,37 @@
 {
   "weekNumber": 2,
-  "startDate": "2024-12-16",
+  "startDate": "2025-02-10",
   "stats": {},
   "runs": [
     {
-      "date": "2024-12-16",
+      "date": "2025-02-11",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8km at 6:30-7:00/km pace. Keep effort relaxed and controlled throughout."
+    },
+    {
+      "date": "2025-02-12",
       "type": "Long Run",
-      "distance": 4,
-      "notes": "Long Run 4 miles easy"
+      "distance": 18,
+      "notes": "Long Run 18km at 6:15-6:45/km pace. Take water and consider energy gel at 12km. Start very easy first 2-3km then settle into pace."
     },
     {
-      "date": "2024-12-18",
-      "type": "Easy Run",
-      "distance": 6,
-      "notes": "Easy Run 4 miles + 2 x 8-sec hill sprint"
+      "date": "2025-02-14",
+      "type": "Quality",
+      "distance": 10,
+      "notes": "Quality Session: Total 10km as follows: 2km warmup (7:00/km pace), 3 x 2km at tempo pace (5:45-6:00/km) with 800m easy jog recovery (7:00+/km) between sets, 2km cooldown (7:00+/km pace). Dynamic stretches before start, focus on form during tempo sections."
     },
     {
-      "date": "2024-12-19",
-      "type": "Easy Run",
-      "distance": 6,
-      "notes": "Easy Run 6 miles"
+      "date": "2025-02-15",
+      "type": "Medium Long Run",
+      "distance": 11,
+      "notes": "Medium Long Run 11km at 6:30-6:45/km pace. Take water if needed. Focus on maintaining consistent pace throughout."
     },
     {
-      "date": "2024-12-21",
+      "date": "2025-02-16",
       "type": "Easy Run",
-      "distance": 5,
-      "notes": "Easy Run 4 miles + 1 x 8-sec hill sprint"
+      "distance": 7,
+      "notes": "Easy Run 7km at 6:30-7:00/km pace. Recovery effort - should feel very comfortable after yesterday's longer run."
     }
   ]
 }
