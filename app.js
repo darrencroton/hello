@@ -1,3 +1,6 @@
+import { updateDistanceChart } from './charts/distanceChart.js';
+import { updateTimeChart } from './charts/timeChart.js';
+
 // Configuration
 const config = {
     dataDir: 'data/',
@@ -97,113 +100,12 @@ function padZero(num) {
 function updateCharts(weeklyData) {
     updateDistanceChart(weeklyData);
     updateTimeChart(weeklyData);
-    updateElevationChart(weeklyData);
-    updatePaceChart(weeklyData);
-}
-
-// Update Distance Chart
-function updateDistanceChart(weeklyData) {
-    const ctx = document.getElementById('distanceChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: weeklyData.map(w => `Week ${w.weekNum}`),
-            datasets: [{
-                label: 'Distance (km)',
-                data: weeklyData.map(w => w.kmRun),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-
-// Update Time Chart
-function updateTimeChart(weeklyData) {
-    const ctx = document.getElementById('timeChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: weeklyData.map(w => `Week ${w.weekNum}`),
-            datasets: [{
-                label: 'Time (hours)',
-                data: weeklyData.map(w => w.timeRun / 3600),  // Convert seconds to hours
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-
-// Update Elevation Chart
-function updateElevationChart(weeklyData) {
-    const ctx = document.getElementById('elevationChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: weeklyData.map(w => `Week ${w.weekNum}`),
-            datasets: [{
-                label: 'Elevation (m)',
-                data: weeklyData.map(w => w.elevation),
-                backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-
-// Update Pace Chart
-function updatePaceChart(weeklyData) {
-    const ctx = document.getElementById('paceChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: weeklyData.map(w => `Week ${w.weekNum}`),
-            datasets: [{
-                label: 'Pace (min/km)',
-                data: weeklyData.map(w => (w.timeRun / 60) / w.kmRun),  // Convert to minutes per km
-                backgroundColor: 'rgba(153, 102, 255, 0.5)',
-                borderColor: 'rgba(153, 102, 255, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    // TODO: Add back elevation and pace charts
 }
 
 // Initialize when document is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Get list of available week files (you'll need to implement this)
+    // Get list of available week files
     config.weeks = [1, 2, 3, 4, 5, 6, 7, 8];  // Example - replace with actual week numbers
     
     // Start loading data
