@@ -32,7 +32,7 @@ async function initializeApp() {
     const totalWeeks = data.weeks.length;
 
     data.weeks.forEach((week, index) => {
-        const weekNumber = data.weeks.length - index;
+        const weekNumber = index + 1; // Week numbers now go from 1 to totalWeeks
         weekContainer.appendChild(createWeekElement(week, weekNumber, totalWeeks, useKm));
     });
 
