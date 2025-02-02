@@ -18,7 +18,7 @@ async function getWeekFiles() {
     return files;
 }
 
-async function fetchTrainingData() {
+export async function fetchTrainingData() {
     try {
         // Get metadata first
         const metaResponse = await fetch('data/metadata.json');
@@ -39,12 +39,3 @@ async function fetchTrainingData() {
         return null;
     }
 }
-
-function convertToKm(miles) {
-    return (miles * 1.60934).toFixed(1);
-}
-
-export {
-    fetchTrainingData,
-    convertToKm
-};
