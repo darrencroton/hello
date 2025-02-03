@@ -82,9 +82,8 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
     topButton.className = 'top-button';
     topButton.textContent = 'Top';
     topButton.addEventListener('click', () => {
-        const weekTop = weekEl.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
-            top: weekTop - headerHeight,
+            top: 0,
             behavior: 'smooth'
         });
     });
