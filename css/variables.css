@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #FF5B5B;
+    --primary-color: #3B82F6;
     --title-color: #E2E8F0;
     --background-color: #F0F4F8;
     --card-background: #FFFFFF;
@@ -7,12 +7,12 @@
     --text-color: #2C3E50;
     --secondary-text: #636E7B;
     --border-color: #E2E8F0;
-    --highlight-background: #FFF5F5;
+    --highlight-background: #EFF6FF;
     --rest-day-background: #F8FAFC;
     --rest-day-text: #64748B;
     --weekly-summary-title-color: #2C3E50;
-    --weekly-summary-background: #E6F6F5;
-    --weekly-summary-border: #80CBC4;
+    --weekly-summary-background: #F0F7FF;
+    --weekly-summary-border: #93C5FD;
     --header-gradient: linear-gradient(135deg, #1E3B8B, #2563EB);
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
