@@ -11,6 +11,8 @@
     flex: 0 0 100%;
     scroll-snap-align: start;
     padding: 1rem;
+    min-height: 100vh;
+    padding-bottom: 1rem;
 }
 
 .week-summary {
