@@ -1,45 +1,39 @@
 :root {
-    --primary-color: #FF5B5B;  /* Energetic coral red */
-    --title-color: #FFFFFF;  /* Pure white */
-    --background-color: #F0F4F8; /* Light blue-grey background */
+    --primary-color: #FF5B5B;
+    --title-color: #E2E8F0;
+    --background-color: #F0F4F8;
     --card-background: #FFFFFF;
-    --header-background: #2E294E; /* Deep purple header */
+    --header-background: #2E294E;
     --text-color: #2C3E50;
     --secondary-text: #636E7B;
     --border-color: #E2E8F0;
-    --highlight-background: #FFF5F5; /* Light coral highlight */
+    --highlight-background: #FFF5F5;
     --rest-day-background: #F8FAFC;
     --rest-day-text: #64748B;
-    --weekly-summary-background: #E6F6F5;  /* Light mint/teal */
-    --weekly-summary-border: #80CBC4;      /* Darker teal border */
-    
-    /* New gradient for header */
-    --header-gradient: linear-gradient(135deg, #2E294E, #1B1B3A);
-    
-    /* Card shadow for better depth */
+    --weekly-summary-title-color: #2C3E50;
+    --weekly-summary-background: #E6F6F5;
+    --weekly-summary-border: #80CBC4;
+    --header-gradient: linear-gradient(135deg, #1E1B4B, #312E81);
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #FF7070;  /* Brighter coral for dark mode */
+        --primary-color: #FF7070;
         --title-color: #E2E8F0;
-        --background-color: #111827; /* Dark blue-grey background */
+        --background-color: #111827;
         --card-background: #1F2937;
         --header-background: #2E294E;
         --text-color: #F1F5F9;
         --secondary-text: #94A3B8;
         --border-color: #374151;
-        --highlight-background: #312E81; /* Deep indigo highlight */
+        --highlight-background: #312E81;
         --rest-day-background: #1E293B;
         --rest-day-text: #94A3B8;
-        --weekly-summary-background: #1A332F;  /* Dark teal */
-        --weekly-summary-border: #2A4D47;      /* Slightly lighter border */
-        
-        /* Dark mode gradient */
+        --weekly-summary-title-color: #E2E8F0;
+        --weekly-summary-background: #1A332F;
+        --weekly-summary-border: #2A4D47;
         --header-gradient: linear-gradient(135deg, #1E1B4B, #312E81);
-        
-        /* Adjusted shadow for dark mode */
         --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     }
 }
