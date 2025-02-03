@@ -1,8 +1,9 @@
 :root {
     --primary-color: #4169E1;
-    --title-color: #663399;
-    --background-color: #F2F2F7;
+    --title-color: #5B9A8B;
+    --background-color: #404040;
     --card-background: #FFFFFF;
+    --header-background: #303030;
     --text-color: #2C3E50;
     --secondary-text: #8E8E93;
     --border-color: #C6C6C8;
@@ -19,6 +20,7 @@
         --title-color: #9E7CC9;
         --background-color: #000000;
         --card-background: #1C1C1E;
+        --header-background: #1C1C1E;
         --text-color: #FFFFFF;
         --secondary-text: #8E8E93;
         --border-color: #38383A;
