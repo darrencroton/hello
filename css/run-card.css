@@ -3,8 +3,13 @@
     border-radius: 12px;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease;
+}
+
+.run-card:hover {
+    transform: translateY(-2px);
 }
 
 .rest-day {

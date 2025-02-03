@@ -72,14 +72,17 @@ body {
 }
 
 .header {
-    background: var(--header-background);
-    padding: 20px;
+    background: var(--header-gradient);
+    padding: 25px;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: none;
+    box-shadow: var(--card-shadow);
 }
 
 .header h1 {
     margin: 0;
-    font-size: 1.5em;
-    color: var(--text-color);
+    font-size: 1.8em;
+    color: var(--title-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
 }

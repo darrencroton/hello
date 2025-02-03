@@ -1,33 +1,45 @@
 :root {
-    --primary-color: #4169E1;
-    --title-color: #663399;
-    --background-color: #F2F2F7;
+    --primary-color: #FF5B5B;  /* Energetic coral red */
+    --title-color: #2C3E50;    /* Deep blue-grey */
+    --background-color: #F0F4F8; /* Light blue-grey background */
     --card-background: #FFFFFF;
-    --header-background: #FFFFFF;
+    --header-background: #2E294E; /* Deep purple header */
     --text-color: #2C3E50;
-    --secondary-text: #8E8E93;
-    --border-color: #C6C6C8;
-    --highlight-background: #E5E5EA;
-    --rest-day-background: #F9F9F9;
-    --rest-day-text: #8E8E93;
-    --weekly-summary-background: #F5F8FF;
-    --weekly-summary-border: #D5E0F5;
+    --secondary-text: #636E7B;
+    --border-color: #E2E8F0;
+    --highlight-background: #FFF5F5; /* Light coral highlight */
+    --rest-day-background: #F8FAFC;
+    --rest-day-text: #64748B;
+    --weekly-summary-background: #EEEEFF; /* Light purple for weekly summary */
+    --weekly-summary-border: #C7D2FE;
+    
+    /* New gradient for header */
+    --header-gradient: linear-gradient(135deg, #2E294E, #1B1B3A);
+    
+    /* Card shadow for better depth */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #6C8FFF;
-        --title-color: #9E7CC9;
-        --background-color: #000000;
-        --card-background: #1C1C1E;
-        --header-background: #1C1C1E;
-        --text-color: #FFFFFF;
-        --secondary-text: #8E8E93;
-        --border-color: #38383A;
-        --highlight-background: #2C2C2E;
-        --rest-day-background: #2C2C2E;
-        --rest-day-text: #8E8E93;
-        --weekly-summary-background: #1A1D26;
-        --weekly-summary-border: #2A3040;
+        --primary-color: #FF7070;  /* Brighter coral for dark mode */
+        --title-color: #E2E8F0;
+        --background-color: #111827; /* Dark blue-grey background */
+        --card-background: #1F2937;
+        --header-background: #2E294E;
+        --text-color: #F1F5F9;
+        --secondary-text: #94A3B8;
+        --border-color: #374151;
+        --highlight-background: #312E81; /* Deep indigo highlight */
+        --rest-day-background: #1E293B;
+        --rest-day-text: #94A3B8;
+        --weekly-summary-background: #1E1B4B; /* Dark purple for weekly summary */
+        --weekly-summary-border: #312E81;
+        
+        /* Dark mode gradient */
+        --header-gradient: linear-gradient(135deg, #1E1B4B, #312E81);
+        
+        /* Adjusted shadow for dark mode */
+        --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     }
 }
