@@ -16,7 +16,7 @@
 .week-summary {
     background-color: var(--card-background);
     padding: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
