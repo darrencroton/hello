@@ -20,31 +20,29 @@
     border-radius: 12px;
     border: 1px solid var(--weekly-summary-border);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: var(--weekly-summary-text);
 }
 
 .week-summary-title {
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--title-color);
+    color: var(--weekly-summary-title);
     margin-bottom: 0.8rem;
 }
 
 .week-progress {
-    color: var(--text-color);
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
     font-weight: 500;
 }
 
 .countdown {
-    color: var(--text-color);
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
     font-weight: 500;
 }
 
 .total-distance {
-    color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 500;
 }
