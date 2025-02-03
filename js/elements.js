@@ -89,7 +89,18 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         });
     });
     weekEl.appendChild(topButton);
-
+    
+    const runnerDiv = document.createElement('div');
+    runnerDiv.className = 'runner-pattern';
+    runnerDiv.innerHTML = `
+        <div style="text-align: center; padding-top: 1rem; color: var(--secondary-text)">
+            🏃 🏃 🏃<br>
+            🏃 🏃 🏃<br>
+            🏃 🏃 🏃
+        </div>
+    `;
+    weekEl.appendChild(runnerDiv);
+    
     return weekEl;
 }
 
