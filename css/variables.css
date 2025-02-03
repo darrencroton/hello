@@ -9,4 +9,23 @@
     --highlight-background: #E5E5EA;
     --rest-day-background: #F9F9F9;
     --rest-day-text: #8E8E93;
+    --weekly-summary-background: #F8F5FF;
+    --weekly-summary-border: #D8D5DF;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #6C8FFF;
+        --title-color: #9E7CC9;
+        --background-color: #000000;
+        --card-background: #1C1C1E;
+        --text-color: #FFFFFF;
+        --secondary-text: #8E8E93;
+        --border-color: #38383A;
+        --highlight-background: #2C2C2E;
+        --rest-day-background: #2C2C2E;
+        --rest-day-text: #8E8E93;
+        --weekly-summary-background: #1E1A26;
+        --weekly-summary-border: #38343F;
+    }
 }
