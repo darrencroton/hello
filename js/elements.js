@@ -89,15 +89,15 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         });
     });
     weekEl.appendChild(topButton);
-    
+
     const runnerDiv = document.createElement('div');
     runnerDiv.className = 'runner-pattern';
-    runnerDiv.innerHTML = `
-        <div style="text-align: center; padding-top: 1rem; color: var(--secondary-text)">
-            🏃 🏃 🏃<br>
-            🏃 🏃 🏃<br>
-            🏃 🏃 🏃
-        </div>
+    runnerDiv.style.cssText = `
+        min-height: 200px;  // we can adjust this
+        background-image: url('path/to/your/8bit-runner.png');
+        background-repeat: repeat;
+        background-size: 32px 32px;  // adjust based on your PNG size
+        margin-top: 1rem;
     `;
     weekEl.appendChild(runnerDiv);
     
