@@ -35,20 +35,20 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--weekly-summary-title-color);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
 }
 
 .week-progress {
     color: var(--text-color);
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-weight: 500;
 }
 
 .countdown {
     color: var(--text-color);
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-weight: 500;
 }
 
