@@ -10,9 +10,9 @@
     --rest-day-background: #F9F9F9;
     --rest-day-text: #8E8E93;
     
-    /* Inverted theme for weekly summary */
-    --weekly-summary-background: #1C1C1E;
-    --weekly-summary-border: #38383A;
+    /* Inverted theme for weekly summary - softer dark mode */
+    --weekly-summary-background: #2C3E50;
+    --weekly-summary-border: #465A6C;
     --weekly-summary-text: #FFFFFF;
     --weekly-summary-title: #9E7CC9;
 }
@@ -30,9 +30,9 @@
         --rest-day-background: #2C2C2E;
         --rest-day-text: #8E8E93;
         
-        /* Inverted theme for weekly summary */
-        --weekly-summary-background: #FFFFFF;
-        --weekly-summary-border: #C6C6C8;
+        /* Inverted theme for weekly summary - off-white */
+        --weekly-summary-background: #F5F5F7;
+        --weekly-summary-border: #D8D8DA;
         --weekly-summary-text: #2C3E50;
         --weekly-summary-title: #663399;
     }
