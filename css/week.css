@@ -32,29 +32,29 @@
 }
 
 .week-summary-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--weekly-summary-title-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .week-progress {
     color: var(--text-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.0rem;
+    /* margin-bottom: 0.3rem; */
     font-weight: 500;
 }
 
 .countdown {
     color: var(--text-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.0rem;
+    /* margin-bottom: 0.3rem; */
     font-weight: 500;
 }
 
 .total-distance {
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
