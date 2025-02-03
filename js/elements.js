@@ -73,14 +73,8 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         }
     }
 
-    allDays.forEach((day, index) => {
+    allDays.forEach(day => {
         weekEl.appendChild(createDayElement(day, useKm));
-        
-        if (index < allDays.length - 1) {
-            const divider = document.createElement('div');
-            divider.className = CLASSES.WEEK_DIVIDER;
-            weekEl.appendChild(divider);
-        }
     });
 
     // Add Top button
