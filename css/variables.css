@@ -9,8 +9,8 @@
     --highlight-background: #E5E5EA;
     --rest-day-background: #F9F9F9;
     --rest-day-text: #8E8E93;
-    --weekly-summary-background: #F8F5FF;
-    --weekly-summary-border: #D8D5DF;
+    --weekly-summary-background: #F5F8FF;
+    --weekly-summary-border: #D5E0F5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +25,7 @@
         --highlight-background: #2C2C2E;
         --rest-day-background: #2C2C2E;
         --rest-day-text: #8E8E93;
-        --weekly-summary-background: #1E1A26;
-        --weekly-summary-border: #38343F;
+        --weekly-summary-background: #1A1D26;
+        --weekly-summary-border: #2A3040;
     }
 }
