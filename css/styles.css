@@ -83,6 +83,6 @@ body {
     margin: 0;
     font-size: 1.8em;
     color: var(--title-color);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);  /* Stronger shadow */
     letter-spacing: 0.5px;
 }
