@@ -19,21 +19,21 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #FF7070;
+        --primary-color: #60A5FA;
         --title-color: #E2E8F0;
-        --background-color: #111827;
+        --background-color: #262626;
         --card-background: #1F2937;
         --header-background: #2E294E;
         --text-color: #F1F5F9;
         --secondary-text: #94A3B8;
         --border-color: #374151;
-        --highlight-background: #312E81;
+        --highlight-background: #1E3A8A;
         --rest-day-background: #1E293B;
         --rest-day-text: #94A3B8;
         --weekly-summary-title-color: #E2E8F0;
-        --weekly-summary-background: #1A332F;
-        --weekly-summary-border: #2A4D47;
-        --header-gradient: linear-gradient(135deg, #1E1B4B, #312E81);
+        --weekly-summary-background: #172554;
+        --weekly-summary-border: #3B82F6;
+        --header-gradient: linear-gradient(135deg, #1E40AF, #3B82F6);
         --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     }
 }
