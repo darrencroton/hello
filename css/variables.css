@@ -9,8 +9,12 @@
     --highlight-background: #E5E5EA;
     --rest-day-background: #F9F9F9;
     --rest-day-text: #8E8E93;
-    --weekly-summary-background: #F5F8FF;
-    --weekly-summary-border: #D5E0F5;
+    
+    /* Inverted theme for weekly summary */
+    --weekly-summary-background: #1C1C1E;
+    --weekly-summary-border: #38383A;
+    --weekly-summary-text: #FFFFFF;
+    --weekly-summary-title: #9E7CC9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +29,11 @@
         --highlight-background: #2C2C2E;
         --rest-day-background: #2C2C2E;
         --rest-day-text: #8E8E93;
-        --weekly-summary-background: #1A1D26;
-        --weekly-summary-border: #2A3040;
+        
+        /* Inverted theme for weekly summary */
+        --weekly-summary-background: #FFFFFF;
+        --weekly-summary-border: #C6C6C8;
+        --weekly-summary-text: #2C3E50;
+        --weekly-summary-title: #663399;
     }
 }
