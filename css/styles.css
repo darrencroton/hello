@@ -83,8 +83,3 @@ body {
     font-size: 1.5em;
     color: var(--text-color);
 }
-
-.runner-pattern {
-    flex: 1;
-    background-color: var(--background-color);
-}

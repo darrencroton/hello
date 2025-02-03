@@ -89,18 +89,6 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
         });
     });
     weekEl.appendChild(topButton);
-
-    const runnerDiv = document.createElement('div');
-    runnerDiv.className = 'runner-pattern';
-    runnerDiv.style.cssText = `
-        min-height: 128px;  // This gives us 4 rows minimum
-        background-image: url('runner.png');
-        background-repeat: repeat;
-        background-size: 32px 32px;
-        margin-top: 1rem;
-        opacity: 0.4;  // Makes it subtle
-    `;
-    weekEl.appendChild(runnerDiv);
     
     return weekEl;
 }
