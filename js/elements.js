@@ -93,11 +93,12 @@ function createWeekElement(week, weekNumber, totalWeeks, useKm, headerHeight) {
     const runnerDiv = document.createElement('div');
     runnerDiv.className = 'runner-pattern';
     runnerDiv.style.cssText = `
-        min-height: 200px;  // we can adjust this
-        background-image: url('path/to/your/8bit-runner.png');
+        min-height: 128px;  // This gives us 4 rows minimum
+        background-image: url('runner.png');
         background-repeat: repeat;
-        background-size: 32px 32px;  // adjust based on your PNG size
+        background-size: 32px 32px;
         margin-top: 1rem;
+        opacity: 0.4;  // Makes it subtle
     `;
     weekEl.appendChild(runnerDiv);
     
