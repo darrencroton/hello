@@ -17,15 +17,15 @@
     },
     {
       "date": "2025-02-07",
-      "type": "Quality",
-      "distance": 9,
-      "notes": "Quality Session: Total 9km as follows: 2km warmup (7:00/km pace), 4km continuous tempo (5:45-6:00/km pace), 3km cooldown (7:00+/km pace). Dynamic stretches before start."
-    },
-    {
-      "date": "2025-02-08",
       "type": "Medium Long Run",
       "distance": 10,
       "notes": "Medium Long Run 10km at 6:30-6:45/km pace. Keep effort controlled throughout."
+    },
+    {
+      "date": "2025-02-08",
+      "type": "Quality",
+      "distance": 9,
+      "notes": "Quality Session: Total 9km as follows: 2km warmup (7:00/km pace), 4km continuous tempo (5:45-6:00/km pace), 3km cooldown (7:00+/km pace). Dynamic stretches before start."
     },
     {
       "date": "2025-02-09",
