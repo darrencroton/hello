@@ -16,16 +16,10 @@
       "notes": "Long Run 16km at 6:15-6:45/km pace. Take water if temperature above 15C. Start easy and settle into pace after 2-3km."
     },
     {
-      "date": "2025-02-08",
-      "type": "Quality",
-      "distance": 10,
-      "notes": "Quality Session: Total 10km as follows: 3km warmup (7:00/km pace), 4km continuous tempo (5:45-6:00/km pace), 3km cooldown (7:00+/km pace). Dynamic stretches before start."
-    },
-    {
       "date": "2025-02-09",
-      "type": "Medium Long Run",
-      "distance": 12,
-      "notes": "Medium Long Run 12km at 6:30-6:45/km pace. Keep effort controlled throughout."
+      "type": "Easy Run",
+      "distance": 10,
+      "notes": "Easy Run 10km at 6:30-7:00/km pace. Keep effort controlled throughout."
     }
   ]
 }
