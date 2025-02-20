@@ -16,10 +16,10 @@
       "notes": "Long Run 20km at 6:15-6:45/km pace. Take water bottle/hydration pack. Energy gel at 8km and 15km. First 3km easy, then settle into pace. Practice race day morning routine including breakfast."
     },
     {
-      "date": "2025-02-20",
-      "type": "Quality",
-      "distance": 11,
-      "notes": "Quality Session: Total 11km as follows: 2km warmup (7:00/km pace), 5km continuous tempo (5:45-6:00/km pace), then 3km at marathon pace (6:10-6:20/km), 1km easy cooldown (7:00+/km). Dynamic stretches before start. This session introduces marathon pace to get familiar with target race effort."
+      "date": "2025-02-21",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8km at 6:30-7:00/km pace. Recovery effort - keep it very easy after a big week. Walk breaks acceptable if needed."
     },
     {
       "date": "2025-02-22",
@@ -29,9 +29,9 @@
     },
     {
       "date": "2025-02-23",
-      "type": "Easy Run",
-      "distance": 8,
-      "notes": "Easy Run 8km at 6:30-7:00/km pace. Recovery effort - keep it very easy after a big week. Walk breaks acceptable if needed."
+      "type": "Quality",
+      "distance": 11,
+      "notes": "Quality Session: Total 11km as follows: 2km warmup (7:00/km pace), 5km continuous tempo (5:45-6:00/km pace), then 3km at marathon pace (6:10-6:20/km), 1km easy cooldown (7:00+/km). Dynamic stretches before start. This session introduces marathon pace to get familiar with target race effort."
     }
   ]
 }
