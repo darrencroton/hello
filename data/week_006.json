@@ -1,7 +1,49 @@
 {
   "weekNumber": 6,
   "startDate": "2025-03-10",
-  "stats": {},
+  "stats": {"targetDistance": "49-52"},
   "runs": [
+    {
+      "date": "2025-03-10",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on recovery after yesterday's quality session. Optional light stretching or yoga."
+    },
+    {
+      "date": "2025-03-11",
+      "type": "Easy Run",
+      "distance": 7,
+      "notes": "Easy Run 7km at 6:30-7:00/km pace. This is a step-back week, so focus on relaxed, comfortable running. Monitor how your body is responding to the increased training load of recent weeks."
+    },
+    {
+      "date": "2025-03-12",
+      "type": "Long Run",
+      "distance": 18,
+      "notes": "Long Run 18km at 6:15-6:45/km pace. Keep effort comfortable with no structured pace work this week. This reduced long run allows recovery while maintaining endurance. Focus on good form throughout. Take water as needed - continue practicing your hydration strategy even on easier weeks."
+    },
+    {
+      "date": "2025-03-13",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on recovery, hydration and good nutrition. Optional light mobility work to keep muscles loose."
+    },
+    {
+      "date": "2025-03-14",
+      "type": "Easy Run",
+      "distance": 7,
+      "notes": "Easy Run 7km at 6:30-7:00/km pace. Keep effort very relaxed. Consider tracking morning heart rate this week to establish your normal baseline - this can help identify early signs of overtraining in more intense training weeks ahead."
+    },
+    {
+      "date": "2025-03-15",
+      "type": "Medium Long Run",
+      "distance": 12,
+      "notes": "Medium-Long Run 12km at 6:30-6:45/km pace. Moderate hills, focus on form rather than speed. This is a reduction in distance from previous weeks to allow recovery before entering the Peak Phase. Pay attention to how your body feels on hills after several weeks of hill-focused training."
+    },
+    {
+      "date": "2025-03-16",
+      "type": "Quality",
+      "distance": 9,
+      "notes": "Marathon Pace Session: Total 9km as follows: 2km warmup, 5km at marathon pace (6:10-6:20/km), 2km cooldown. The focus is on maintaining perfect marathon pace - you should finish feeling like you could have run much further at this pace. This is a confidence-building session to practice race pace before moving to the Peak Phase of training."
+    }
   ]
 }

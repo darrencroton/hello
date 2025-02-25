@@ -1,8 +1,43 @@
 {
   "weekNumber": 4,
   "startDate": "2025-02-24",
-  "stats": {},
+  "stats": {"targetDistance": "57-60"},
   "runs": [
-
+    {
+      "date": "2025-02-25",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8km at 6:30-7:00/km pace. Keep effort relaxed and controlled throughout. ✓ COMPLETED"
+    },
+    {
+      "date": "2025-02-26",
+      "type": "Long Run",
+      "distance": 22,
+      "notes": "Long Run 22km at 6:15-6:45/km pace. Include 2 x 3km at marathon pace (6:10-6:20/km) at 10km and 16km marks. Take water and energy gels at 8km and 16km. Be strict about not running marathon pace segments too fast - practicing exact race pace builds specific endurance needed for race day. Track morning heart rate tomorrow to monitor recovery."
+    },
+    {
+      "date": "2025-02-27",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on hydration and recovery. Optional light stretching, foam rolling, or yoga (20-30 min). Monitor any soreness from yesterday's long run."
+    },
+    {
+      "date": "2025-02-28",
+      "type": "Easy Run",
+      "distance": 7,
+      "notes": "Easy Run 7km at 6:30-7:00/km pace. Keep effort very relaxed - this is a recovery run after your long run. Consider adding 15-20 minutes of strength work focusing on running-specific movements: single leg squats, calf raises, planks and hip exercises after the run."
+    },
+    {
+      "date": "2025-03-01",
+      "type": "Medium Long Run",
+      "distance": 13,
+      "notes": "Medium-Long Hill Run 13km at 6:30-6:45/km on flats, effort-based on hills. Find a route with moderate hills (4-6% grade) where you can maintain good form. Focus on strong uphill form (slight forward lean, shorter stride, powerful arm swing) and controlled downhill running. Monitor how your body responds to hills for future sessions."
+    },
+    {
+      "date": "2025-03-02",
+      "type": "Quality",
+      "distance": 9,
+      "notes": "Hill Repeats: Total 9km as follows: 2km warmup (7:00/km pace), 5 x 3 min uphill efforts with jog down recovery, 2km cooldown (7:00+/km). Choose a moderate grade hill (4-6%) that allows you to maintain good form throughout. Effort should feel hard but sustainable for 3 minutes (approximately 5:30-5:45/km effort on flat ground)."
+    }
   ]
 }
