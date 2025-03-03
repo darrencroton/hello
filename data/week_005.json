@@ -1,7 +1,7 @@
 {
   "weekNumber": 5,
   "startDate": "2025-03-03",
-  "stats": {"targetDistance": "60-63"},
+  "stats": {},
   "runs": [
     {
       "date": "2025-03-03",
@@ -16,16 +16,16 @@
       "type": "Easy Run",
       "distance": 9,
       "planned": "Easy Run 9km at 6:30-7:00/km pace. Keep effort controlled throughout. If you're interested in tracking recovery, note your morning heart rate today and compare with normal baseline.",
-      "actualDistance": 8.5,
-      "actual": "Felt a bit tired so kept it shorter. Average pace was 6:45/km. Resting HR was 52bpm this morning, slightly elevated from baseline."
+      "actualDistance": 10,
+      "actual": "Good run, went a bit further. Easy does it."
     },
     {
       "date": "2025-03-05",
       "type": "Long Run",
       "distance": 24,
       "planned": "Long Run 24km at 6:15-6:45/km with 5km at marathon pace (6:10-6:20/km) from 14-19km. Take water and energy gels at 8km and 16km. Use this run to experiment systematically with your race-day nutrition strategy - test different gel/drink combinations you plan to use on race day. Pay attention to how your body responds during the marathon pace segment.",
-      "actualDistance": 26.2,
-      "actual": "Felt strong today so extended a bit. Hit the marathon pace section well (avg 6:15/km). Maurten gels at 8km and 16km worked well with no GI issues. Might try taking one at 24km on the next long run to simulate late-race fueling."
+      "actualDistance": null,
+      "actual": null
     },
     {
       "date": "2025-03-06",
@@ -40,24 +40,24 @@
       "type": "Easy Run",
       "distance": 8,
       "planned": "Easy Run + Strides 8km at 6:30-7:00/km pace. Add 6 x 100m strides at the end of the run (fast but relaxed form). Consider adding 15-20 minutes of strength work focusing on running-specific movements: single leg squats, calf raises, planks and hip exercises after the run.",
-      "actualDistance": 8,
-      "actual": "Completed as planned. Felt recovered after the long run. Did strength work afterward - planks, lunges, and calf raises."
+      "actualDistance": null,
+      "actual": null
     },
     {
       "date": "2025-03-08",
       "type": "Medium Long Run",
       "distance": 13,
       "planned": "Medium-Long Hill Run 13km at 6:30-6:45/km on flats, effort-based on hills. Progressive effort - last 4km slightly faster if feeling good. Aim for moderate hills (4-6% grade) to maintain good running form. Focus on strong hill running technique and use downhills to practice controlled form that will help prevent quad fatigue on race day.",
-      "actualDistance": 12.7,
-      "actual": "Good hill session. Found a new route with some challenging climbs. Quads feeling it on the downhills, but form stayed solid. Last 4km at 6:20/km pace."
+      "actualDistance": null,
+      "actual": null
     },
     {
       "date": "2025-03-09",
       "type": "Quality",
       "distance": 11,
       "planned": "Hill + Tempo Session: Total 11km as follows: 2km warmup, 4 x 3 min hill efforts with jog down recovery, 3km tempo run (5:45-6:00/km pace), 2km cooldown. This complex session builds strength through hills first, then challenges you to maintain tempo pace on slightly fatigued legs - excellent marathon-specific training.",
-      "actualDistance": 10.5,
-      "actual": "Modified today's session due to light rain. Did 3 hill repeats instead of 4, but completed the full tempo portion at 5:50/km pace. Legs felt good considering yesterday's effort."
+      "actualDistance": null,
+      "actual": null
     }
   ]
 }
