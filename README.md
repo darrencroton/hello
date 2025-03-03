@@ -11,6 +11,8 @@ This application provides a comprehensive view of a marathon training plan, brea
 - **Week-by-Week Training Plan**: Organized view of your entire training schedule
 - **Daily Workout Details**: Each day shows workout type, distance, and specific notes
 - **Progress Tracking**: Displays countdown to race day and weekly distance totals
+- **Workout Reflection**: Track actual vs planned distances and add notes about completed runs
+- **Performance Analysis**: Compare planned and completed weekly totals to track training progress
 - **Responsive Design**: Works on desktop and mobile devices
 - **Dark Mode Support**: Automatically adapts to your system preferences
 
@@ -64,6 +66,19 @@ This template can be adapted for different training plans by modifying the JSON 
 
 - Edit `metadata.json` to set your race details
 - Create or modify `week_xxx.json` files to adjust training schedule
+- Add actual workout data with fields like `actualDistance` and `actual` for completed runs
+
+Example JSON format:
+```json
+{
+  "date": "2025-03-04",
+  "type": "Easy Run",
+  "distance": 9,           // planned distance
+  "planned": "Easy Run...", // planned workout description (or "notes" for backward compatibility)
+  "actualDistance": 8.5,    // actual distance completed (optional)
+  "actual": "Felt tired..."  // notes about the completed workout (optional)
+}
+```
 
 ## Target Audience
 
