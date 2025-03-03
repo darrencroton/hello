@@ -23,15 +23,15 @@
     },
     {
       "date": "2025-02-22",
-      "type": "Medium Long Run",
-      "distance": 12,
-      "notes": "Medium Long Run 12km at 6:30-6:45/km pace. Take water if needed. Focus on maintaining consistent pace and good form even with accumulated fatigue."
+      "type": "Rest",
+      "distance": 0,
+      "notes": "Rest Day. Focus on recovery with light stretching if desired."
     },
     {
       "date": "2025-02-23",
-      "type": "Quality",
-      "distance": 11,
-      "notes": "Quality Session: Total 11km as follows: 2km warmup (7:00/km pace), 5km continuous tempo (5:45-6:00/km pace), then 3km at marathon pace (6:10-6:20/km), 1km easy cooldown (7:00+/km). Dynamic stretches before start. This session introduces marathon pace to get familiar with target race effort."
+      "type": "Medium Long Run",
+      "distance": 12,
+      "notes": "Medium Long Run 12km at 6:30-6:45/km pace. Take water if needed. Focus on maintaining consistent pace and good form even with accumulated fatigue."
     }
   ]
 }
