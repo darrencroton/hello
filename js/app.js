@@ -34,56 +34,65 @@ class TrainingApp {
     }
 
     async initialize() {
-        const data = await fetchTrainingData();
-        if (!data) {
-            this.appElement.innerHTML = `<div class="${CLASSES.LOADING}">Error loading training data</div>`;
-            return;
+        try {
+            const data = await fetchTrainingData();
+            
+            if (!data) {
+                this.appElement.innerHTML = `<div class="${CLASSES.LOADING}">Error loading training data</div>`;
+                return;
+            }
+
+            // Update page title with race name
+            document.querySelector('.header h1').textContent = data.racename;
+
+            // Cache important values
+            this.useKm = data.units === 'kilometers';
+            this.totalWeeks = data.weeks.length;
+            this.headerHeight = document.querySelector('.header').offsetHeight;
+            
+            // Create main container
+            const mainContainer = document.createElement('div');
+            mainContainer.id = IDS.MAIN_CONTAINER;
+            
+            // Create navigation button
+            const navContainer = document.createElement('div');
+            navContainer.className = CLASSES.NAV_CONTAINER;
+            navContainer.innerHTML = `
+                <button id="${IDS.TODAY_WEEK}" class="${CLASSES.NAV_BUTTON}">Today</button>
+            `;
+            mainContainer.appendChild(navContainer);
+            
+            // Create and cache week container
+            this.weekContainer = document.createElement('div');
+            this.weekContainer.className = CLASSES.WEEK_CONTAINER;
+            mainContainer.appendChild(this.weekContainer);
+
+            data.weeks.forEach((week) => {
+                this.weekContainer.appendChild(
+                    createWeekElement(week, week.weekNumber, this.totalWeeks, this.useKm, this.headerHeight)
+                );
+            });
+
+            // Replace loading message with main content
+            this.appElement.innerHTML = '';
+            this.appElement.appendChild(mainContainer);
+
+            // Setup navigation and scroll to current week
+            this.setupNavigation();
+            this.todayWeekIndex = findCurrentWeekIndex(data.weeks);
+            this.currentWeekIndex = this.todayWeekIndex;
+            this.scrollToWeek(this.currentWeekIndex);
+        } catch (error) {
+            console.error('Error in initialize:', error);
+            this.appElement.innerHTML = `<div class="${CLASSES.LOADING}">Error: ${error.message}</div>`;
         }
-
-        // Update page title with race name
-        document.querySelector('.header h1').textContent = data.racename;
-
-        // Cache important values
-        this.useKm = data.units === 'kilometers';
-        this.totalWeeks = data.weeks.length;
-        this.headerHeight = document.querySelector('.header').offsetHeight;
-        
-        // Create main container
-        const mainContainer = document.createElement('div');
-        mainContainer.id = IDS.MAIN_CONTAINER;
-        
-        // Create navigation button
-        const navContainer = document.createElement('div');
-        navContainer.className = CLASSES.NAV_CONTAINER;
-        navContainer.innerHTML = `
-            <button id="${IDS.TODAY_WEEK}" class="${CLASSES.NAV_BUTTON}">Today</button>
-        `;
-        mainContainer.appendChild(navContainer);
-        
-        // Create and cache week container
-        this.weekContainer = document.createElement('div');
-        this.weekContainer.className = CLASSES.WEEK_CONTAINER;
-        mainContainer.appendChild(this.weekContainer);
-
-        data.weeks.forEach((week) => {
-            this.weekContainer.appendChild(
-                createWeekElement(week, week.weekNumber, this.totalWeeks, this.useKm, this.headerHeight)
-            );
-        });
-
-        // Replace loading message with main content
-        this.appElement.innerHTML = '';
-        this.appElement.appendChild(mainContainer);
-
-        // Setup navigation and scroll to current week
-        this.setupNavigation();
-        this.todayWeekIndex = findCurrentWeekIndex(data.weeks);
-        this.currentWeekIndex = this.todayWeekIndex;
-        this.scrollToWeek(this.currentWeekIndex);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const app = new TrainingApp();
-    app.initialize();
+    app.initialize().catch(error => {
+        console.error('Error initializing app:', error);
+        document.getElementById(IDS.APP).innerHTML = `<div class="${CLASSES.LOADING}">Error initializing: ${error.message}</div>`;
+    });
 });

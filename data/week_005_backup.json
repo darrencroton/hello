@@ -1,0 +1,49 @@
+{
+  "weekNumber": 5,
+  "startDate": "2025-03-03",
+  "stats": {"targetDistance": "60-63"},
+  "runs": [
+    {
+      "date": "2025-03-03",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Optional light mobility work or gentle yoga. Focus on recovery after your hill session yesterday."
+    },
+    {
+      "date": "2025-03-04",
+      "type": "Easy Run",
+      "distance": 9,
+      "notes": "Easy Run 9km at 6:30-7:00/km pace. Keep effort controlled throughout. If you're interested in tracking recovery, note your morning heart rate today and compare with normal baseline."
+    },
+    {
+      "date": "2025-03-05",
+      "type": "Long Run",
+      "distance": 24,
+      "notes": "Long Run 24km at 6:15-6:45/km with 5km at marathon pace (6:10-6:20/km) from 14-19km. Take water and energy gels at 8km and 16km. Use this run to experiment systematically with your race-day nutrition strategy - test different gel/drink combinations you plan to use on race day. Pay attention to how your body responds during the marathon pace segment."
+    },
+    {
+      "date": "2025-03-06",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on hydration and recovery after yesterday's long run. Optional recovery swim or yoga if desired."
+    },
+    {
+      "date": "2025-03-07",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run + Strides 8km at 6:30-7:00/km pace. Add 6 x 100m strides at the end of the run (fast but relaxed form). Consider adding 15-20 minutes of strength work focusing on running-specific movements: single leg squats, calf raises, planks and hip exercises after the run."
+    },
+    {
+      "date": "2025-03-08",
+      "type": "Medium Long Run",
+      "distance": 13,
+      "notes": "Medium-Long Hill Run 13km at 6:30-6:45/km on flats, effort-based on hills. Progressive effort - last 4km slightly faster if feeling good. Aim for moderate hills (4-6% grade) to maintain good running form. Focus on strong hill running technique and use downhills to practice controlled form that will help prevent quad fatigue on race day."
+    },
+    {
+      "date": "2025-03-09",
+      "type": "Quality",
+      "distance": 11,
+      "notes": "Hill + Tempo Session: Total 11km as follows: 2km warmup, 4 x 3 min hill efforts with jog down recovery, 3km tempo run (5:45-6:00/km pace), 2km cooldown. This complex session builds strength through hills first, then challenges you to maintain tempo pace on slightly fatigued legs - excellent marathon-specific training."
+    }
+  ]
+}
