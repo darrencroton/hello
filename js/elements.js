@@ -33,7 +33,7 @@ function createWeekSummary(week, weekNumber, totalWeeks, useKm) {
     // Choose the appropriate distance display format
     let distanceDisplay = '';
     if (hasActualDistances) {
-        distanceDisplay = `Planned / completed distance: ${plannedDistance} / ${actualDistance} km`;
+        distanceDisplay = `Planned / completed: ${plannedDistance} / ${actualDistance} km`;
     } else {
         distanceDisplay = `Weekly distance: ${plannedDistance} km`;
     }
