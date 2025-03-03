@@ -74,9 +74,9 @@ Example JSON format:
   "date": "2025-03-04",
   "type": "Easy Run",
   "distance": 9,           // planned distance
-  "planned": "Easy Run...", // planned workout description (or "notes" for backward compatibility)
-  "actualDistance": 8.5,    // actual distance completed (optional)
-  "actual": "Felt tired..."  // notes about the completed workout (optional)
+  "planned": "Easy Run...", // planned workout description
+  "actualDistance": 8.5,    // (optional) actual distance completed; use null to leave empty
+  "actual": "Felt tired..."  // (optional) notes about the completed workout; use null to leave empty
 }
 ```
 
