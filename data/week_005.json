@@ -48,7 +48,7 @@
       "type": "Medium Long Run",
       "distance": 13,
       "planned": "Medium-Long Hill Run 13km at 6:30-6:45/km on flats, effort-based on hills. Progressive effort - last 4km slightly faster if feeling good. Aim for moderate hills (4-6% grade) to maintain good running form. Focus on strong hill running technique and use downhills to practice controlled form that will help prevent quad fatigue on race day.",
-      "actualDistance": null,
+      "actualDistance": 13.2,
       "actual": null
     },
     {
@@ -56,8 +56,8 @@
       "type": "Easy Run",
       "distance": 8,
       "planned": "Easy Run + Strides 8km at 6:30-7:00/km pace. Add 6 x 100m strides at the end of the run (fast but relaxed form). Consider adding 15-20 minutes of strength work focusing on running-specific movements: single leg squats, calf raises, planks and hip exercises after the run.",
-      "actualDistance": null,
-      "actual": null
+      "actualDistance": 7,
+      "actual": "Slower recovery run after yesterday’s hills. Super hot still at 28C at 9pm. Gulp!"
     }
   ]
 }
