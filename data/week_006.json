@@ -1,7 +1,7 @@
 {
   "weekNumber": 6,
   "startDate": "2025-03-10",
-  "stats": {"targetDistance": "52"},
+  "stats": {},
   "runs": [
     {
       "date": "2025-03-10",
@@ -17,15 +17,15 @@
       "distance": 7,
       "planned": "Easy Run 7km at 6:30-7:00/km pace. This is a step-back week, so focus on relaxed, comfortable running. Monitor how your body is responding to the increased training load of recent weeks.",
       "actualDistance": null,
-      "actual": null
+      "actual": "A bit faster than planned as I was feeling good. Going to be a hot one today! Still mostly cool out, but could feel the temps increasing near the end. Good stuff!"
     },
     {
       "date": "2025-03-12",
       "type": "Long Run",
       "distance": 18,
       "planned": "Long Run 18km at 6:15-6:45/km pace. Keep effort comfortable with no structured pace work this week. This reduced long run allows recovery while maintaining endurance. Focus on good form throughout. Take water as needed - continue practicing your hydration strategy even on easier weeks.",
-      "actualDistance": null,
-      "actual": null
+      "actualDistance": 18.8,
+      "actual": "Was always going to be a hot one. Took frequent stops for water, since this one wasn’t meant to be about suffering and it’s a step-back week. Ok in the end."
     },
     {
       "date": "2025-03-13",
@@ -41,7 +41,7 @@
       "distance": 7,
       "planned": "Easy Run 7km at 6:30-7:00/km pace. Keep effort very relaxed. Consider tracking morning heart rate this week to establish your normal baseline - this can help identify early signs of overtraining in more intense training weeks ahead.",
       "actualDistance": null,
-      "actual": null
+      "actual": "Pretty good, but starting to get warm by the time I got out."
     },
     {
       "date": "2025-03-15",
