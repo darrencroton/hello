@@ -48,16 +48,16 @@
       "type": "Quality",
       "distance": 9,
       "planned": "Marathon Pace Session: Total 9km as follows: 2km warmup, 5km at marathon pace (6:10-6:20/km), 2km cooldown. The focus is on maintaining perfect marathon pace - you should finish feeling like you could have run much further at this pace. This is a confidence-building session to practice race pace before moving to the Peak Phase of training.",
-      "actualDistance": null,
-      "actual": null
+      "actualDistance": 9.2,
+      "actual": "Like hot yoga, but running! Thankfully pretty overcast. Just took it easy and was ok."
     },
     {
       "date": "2025-03-16",
       "type": "Medium Long Run",
       "distance": 12,
       "planned": "Medium-Long Run 12km at 6:30-6:45/km pace. Moderate hills, focus on form rather than speed. This is a reduction in distance from previous weeks to allow recovery before entering the Peak Phase. Pay attention to how your body feels on hills after several weeks of hill-focused training.",
-      "actualDistance": null,
-      "actual": null
+      "actualDistance": 12.4,
+      "actual": "Mt Eliza to Frankston and back. Wet, cold, and windy … finally? Actually felt quite strong."
     }
   ]
 }
