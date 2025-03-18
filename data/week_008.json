@@ -1,7 +1,63 @@
 {
   "weekNumber": 8,
   "startDate": "2025-03-24",
-  "stats": {},
+  "stats": {"targetDistance": "65-70"},
   "runs": [
+    {
+      "date": "2025-03-24",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on hydration, nutrition, and sleep. Optional light mobility work or gentle yoga (15-20 mins).",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-25",
+      "type": "Easy Run",
+      "distance": 10,
+      "notes": "Easy Run 10km at 6:30-7:00/km pace. Relaxed, conversational pace throughout. Warm-up: 5 min walk + dynamic stretches. Cool-down: 5 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-26",
+      "type": "Long Run",
+      "distance": 26,
+      "notes": "Long Run 26km at 6:15-6:45/km pace. Even effort throughout. Water every 20-30 mins, energy gels at 8km, 16km, and 22km. This is your peak endurance builder. Warm-up: 10 min easy jogging + dynamic stretches. Cool-down: 10 min walking + light stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-27",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on recovery from yesterday's long run. Optional light stretching, foam rolling (20 mins).",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-28",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8km at 6:30-7:00/km pace. Very relaxed effort, focus on recovery. Warm-up: 5 min easy walking + light dynamic stretches. Cool-down: 5 min easy walking + light stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-29",
+      "type": "Quality",
+      "distance": 12,
+      "notes": "Quality Session: Total 12km as follows: 2km warm-up, 3 x (1600m at threshold pace (5:45-6:00/km) with 800m recovery jogs), 2km cool-down. Focus on consistent effort across all three intervals. Warm-up: 10 min progressive jog + dynamic drills. Cool-down: 10 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-03-30",
+      "type": "Medium Long Run",
+      "distance": 16,
+      "notes": "Hilly Medium-Long Run 16km at 6:30-6:45/km on flats, effort-based on hills. Keep hill efforts moderate - aim for sustainable effort. Warm-up: 5 min easy jogging + hip mobility exercises. Cool-down: 5 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    }
   ]
 }

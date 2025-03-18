@@ -1,7 +1,63 @@
 {
   "weekNumber": 9,
   "startDate": "2025-03-31",
-  "stats": {},
+  "stats": {"targetDistance": "60-65"},
   "runs": [
+    {
+      "date": "2025-03-31",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on hydration, nutrition, and sleep. Optional light mobility work or gentle yoga (15-20 mins).",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-01",
+      "type": "Easy Run",
+      "distance": 10,
+      "notes": "Easy Run 10km at 6:30-7:00/km pace. Relaxed effort throughout. Warm-up: 5 min walk + dynamic stretches. Cool-down: 5 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-02",
+      "type": "Long Run",
+      "distance": 22,
+      "notes": "Long Run 22km at 6:15-6:45/km pace. Even effort throughout. Water every 20-30 mins, energy gels at 8km and 16km. Comfortable endurance effort. Warm-up: 5-10 min easy jogging + dynamic stretches. Cool-down: 5-10 min walking + light stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-03",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Focus on recovery from yesterday's long run. Optional light stretching, foam rolling (15-20 mins).",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-04",
+      "type": "Easy Run",
+      "distance": 8,
+      "notes": "Easy Run 8km at 6:30-7:00/km pace. Recovery run, very relaxed effort. Warm-up: 5 min easy walking + light stretches. Cool-down: 5 min easy walking + light stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-05",
+      "type": "Quality",
+      "distance": 10,
+      "notes": "Quality Session: Total 10km as follows: 2km warm-up, 4km at marathon pace (6:10-6:20/km), 2km at threshold pace (5:45-6:00/km), 2km cool-down. Practice marathon pace then add a threshold segment to build confidence. Warm-up: 10 min progressive jog + dynamic drills. Cool-down: 10 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    },
+    {
+      "date": "2025-04-06",
+      "type": "Medium Long Run",
+      "distance": 14,
+      "notes": "Hilly Medium-Long Run 14km at 6:30-6:45/km on flats, effort-based on hills. Last substantial hill run before taper begins. Warm-up: 5 min easy jogging + mobility exercises. Cool-down: 5 min easy jog + stretching.",
+      "actualDistance": null,
+      "actual": null
+    }
   ]
 }
