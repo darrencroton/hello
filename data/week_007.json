@@ -15,47 +15,47 @@
       "date": "2025-03-18",
       "type": "Easy Run",
       "distance": 10,
-      "notes": "Easy Run 10km at 6:30-7:00/km pace. Keep this truly easy to prepare for Thursday's long run. Focus on relaxed form. Warm-up: 5 min easy walk, followed by dynamic stretches. Cool-down: 5 min very easy jog, followed by light stretches.",
-      "actualDistance": null,
-      "actual": null
+      "notes": "Easy Run 10km at 6:30-7:00/km pace. Keep this truly easy to prepare for Friday's long run. Focus on relaxed form. Warm-up: 5 min easy walk, followed by dynamic stretches. Cool-down: 5 min very easy jog, followed by light stretches.",
+      "actualDistance": 10,
+      "actual": "Completed as planned"
     },
     {
       "date": "2025-03-19",
       "type": "Easy Run",
-      "distance": 8,
-      "notes": "Easy Run 8km at 6:30-7:00/km pace. Relaxed effort to prepare for tomorrow's long run. Warm-up/cool-down: Keep minimal (5 min each) to preserve energy.",
+      "distance": 10,
+      "notes": "Easy Run 10km at 6:30-7:00/km pace. Keep this at a comfortable, conversational pace. Focus on good form and staying well-hydrated throughout. Run earlier or later in the day to avoid peak heat if possible. Warm-up: 5 min easy walking + light dynamic stretches. Cool-down: 5 min easy walking + light stretching.",
       "actualDistance": null,
       "actual": null
     },
     {
       "date": "2025-03-20",
-      "type": "Long Run",
-      "distance": 24,
-      "notes": "Long Run 24km at 6:15-6:45/km pace. Even effort throughout. Take water every 20-30 mins, energy gels at 8km and 16km. Focus on steady endurance rather than speed. Warm-up: 5-10 min easy jogging + dynamic stretches. Cool-down: 5-10 min very easy walking + light stretching.",
+      "type": "Rest Day",
+      "distance": 0,
+      "notes": "Rest Day. Complete rest day to prepare for tomorrow's long run. Focus on hydration (aim for 2.5-3L of fluid), good nutrition with adequate carbohydrates, and quality sleep. Optional light stretching or foam rolling (15 mins).",
       "actualDistance": null,
       "actual": null
     },
     {
       "date": "2025-03-21",
-      "type": "Rest Day",
-      "distance": 0,
-      "notes": "Rest Day. Focus on recovery from yesterday's long run. Optional light stretching, foam rolling, or gentle yoga (15-20 mins).",
+      "type": "Long Run",
+      "distance": 24,
+      "notes": "Long Run 24km at 6:15-6:45/km pace. Even effort throughout. Take water every 20-30 mins, energy gels at 8km and 16km. Try to run earlier in the morning to avoid the worst heat. Focus on steady endurance rather than speed. Warm-up: 5-10 min easy jogging + dynamic stretches. Cool-down: 10 min walking + light stretching.",
       "actualDistance": null,
       "actual": null
     },
     {
       "date": "2025-03-22",
       "type": "Quality",
-      "distance": 10,
-      "notes": "Quality Session: Total 10km as follows: 2km warm-up, 6 x 800m at threshold pace (5:45-6:00/km) with 400m recovery jogs, 2km cool-down. Focus on controlled effort rather than specific pace. Warm-up: 10 min progressive jog + dynamic drills. Cool-down: 10 min easy jog + stretching.",
+      "distance": 8.8,
+      "notes": "Quality Session: Total 8.8km as follows: 2km warm-up, 4 x 800m at threshold pace (5:45-6:00/km) with 400m recovery jogs, 2km cool-down. Focus on maintaining good form and consistent pace across all intervals. Warm-up: 10 min progressive jog + dynamic drills. Cool-down: 10 min easy jog + stretching.",
       "actualDistance": null,
       "actual": null
     },
     {
       "date": "2025-03-23",
       "type": "Medium Long Run",
-      "distance": 14,
-      "notes": "Hilly Medium-Long Run 14km at 6:30-6:45/km on flats, effort-based on hills. Focus on strong uphill form and controlled downhill running. Warm-up: 5 min easy jogging + hip mobility exercises. Cool-down: 5 min easy jog + stretching.",
+      "distance": 12,
+      "notes": "Hilly Medium-Long Run 12km at 6:30-6:45/km on flats, effort-based on hills. Focus on strong uphill form and controlled downhill running. This run maintains your hill training element while keeping the distance moderate after yesterday's quality session. Warm-up: 5 min easy jogging + hip mobility exercises. Cool-down: 5 min easy jog + stretching.",
       "actualDistance": null,
       "actual": null
     }
